@@ -17,7 +17,6 @@ public class InputPoller : Info
     private Gamepad[] players = new Gamepad[MAXPLAYERS];
 
     public bool P1UsesKB = false;
-    public bool P2UsesKB = false;
     public bool AllowJoins = true;
 
     protected static InputPoller _Self;
@@ -119,7 +118,6 @@ public class InputPoller : Info
         InputState IS = InputState.GetBlankState();
 
         if (P1UsesKB && (playerNumber == 0)) { GetKeyboard1Input(IS); return IS; }
-        if (P2UsesKB && (playerNumber == 1)) { GetKeyboard2Input(IS); return IS; }
 
 
         if (playerNumber >= MAXPLAYERS)
