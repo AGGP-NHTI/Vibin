@@ -48,12 +48,12 @@ public abstract class State
         yield break;
     }
 
-    public virtual IEnumerator Attack(bool value)
+    public virtual IEnumerator LightAttack(bool value)
     {
 
         yield break;
     }
-    public virtual IEnumerator SlamAttack(bool value)
+    public virtual IEnumerator HeavyAttack(bool value)
     {
 
         yield break;
