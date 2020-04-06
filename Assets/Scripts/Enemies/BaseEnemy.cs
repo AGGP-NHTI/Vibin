@@ -4,28 +4,33 @@ using UnityEngine;
 
 public class BaseEnemy : PWPawn
 {
-    public GameObject vision;
+    public Vision vision;
+
     public float idleWidth = 5f;
     public float speed = 2f;
+
     delegate void currentAction();
     currentAction currentaction;
 
     Vector3 startpos;
-    // Start is called before the first frame update
+    
     void Start()
     {
         startpos = gameObject.transform.position;
         currentaction = Idle;
     }
-
-    // Update is called once per frame
+   
     void FixedUpdate()
     {
         currentaction();
     }
     void Idle()
     {
-
+        if (vision.sighted == true)
+        {
+            currentAction = Chase;
+            vision.sighted = false;
+        }
     }
     void Chase()
     {
@@ -34,5 +39,13 @@ public class BaseEnemy : PWPawn
     void Attack()
     {
         
+    }
+    void Hit()
+    {
+
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
     }
 }
