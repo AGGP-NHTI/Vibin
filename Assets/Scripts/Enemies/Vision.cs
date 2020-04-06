@@ -23,5 +23,13 @@ public class Vision : MonoBehaviour
             sighted = true;
         }
     }
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
+        {
+            sighted = false;
+        }
+    }
 }
 

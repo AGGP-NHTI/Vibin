@@ -6,9 +6,12 @@ public class BaseEnemy : PWPawn
 {
     public Vision vision;
 
+    Vector3 localScale;
     public float idleWidth = 5f;
     public float speed = 2f;
+    public float AT = 1f;
 
+    bool movingRight = true;
     delegate void currentAction();
     currentAction currentaction;
 
@@ -18,14 +21,36 @@ public class BaseEnemy : PWPawn
     {
         startpos = gameObject.transform.position;
         currentaction = Idle;
+        localScale = transform.localScale;
     }
    
     void FixedUpdate()
     {
         currentaction();
+        transform.localScale = localScale;
+    }
+    void Moving()
+    {
+        if (movingRight)
+        {
+            gameObject.transform.position += new Vector3(speed, 0, 0);
+        }
+        else
+        {
+            gameObject.transform.position += new Vector3(-speed, 0, 0);
+        }
     }
     void Idle()
     {
+        Moving();
+        if (gameObject.transform.position.x > startpos.x)
+        {
+            movingRight = true;
+        }
+        else
+        {
+            movingRight = false;
+        }
         if (vision.sighted == true)
         {
             currentaction = Chase;
@@ -38,7 +63,7 @@ public class BaseEnemy : PWPawn
     }
     void Attack()
     {
-        vision.sighted = false;
+        
 
     }
     void Hit()
