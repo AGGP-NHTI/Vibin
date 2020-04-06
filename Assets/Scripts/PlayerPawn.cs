@@ -54,7 +54,7 @@ public class PlayerPawn : PWPawn
 
     public override void Fire2(bool value)
     {
-
+        StartCoroutine(_currentState.HeavyAttack(value));
     }
 
     public void Gravity()

@@ -25,7 +25,13 @@ public class JumpState : State
 
         yield break;
     }
-    
+
+    public override IEnumerator HeavyAttack(bool value)
+    {
+
+
+        yield break;
+    }
     public override IEnumerator Walk(float value)
     {
 

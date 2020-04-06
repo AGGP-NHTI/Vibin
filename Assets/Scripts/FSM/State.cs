@@ -31,11 +31,9 @@ public abstract class State
     }
     public virtual IEnumerator Walk(float value)
     {
-
+        
         yield break;
     }
-
-
     public virtual IEnumerator Run(float value)
     {
 
