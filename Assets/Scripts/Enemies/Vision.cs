@@ -8,7 +8,7 @@ public class Vision : MonoBehaviour
 
     void Start()
     {
-        bool sighted = false;
+        sighted = false;
     }            
     
     void Update()
@@ -17,7 +17,8 @@ public class Vision : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.transform.tag == "Player")
+        PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
         {
             sighted = true;
         }
