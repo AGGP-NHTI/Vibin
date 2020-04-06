@@ -10,6 +10,7 @@ public class PlayerPawn : PWPawn
 
     public GameObject topLeftOverlap;
     public GameObject bottomRightOverlap;
+    public float SlamSpeed;
     public bool jumped;
     public float walkSpeed;
     public float runSpeed;

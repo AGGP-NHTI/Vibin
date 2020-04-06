@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JumpState : State
 {
+
     public JumpState(PlayerPawn pawn) : base(pawn)
     {
     }
@@ -29,6 +30,9 @@ public class JumpState : State
     public override IEnumerator HeavyAttack(bool value)
     {
 
+        
+            _pawn.rb.velocity = new Vector2(0, _pawn.SlamSpeed * -1);
+        
 
         yield break;
     }
