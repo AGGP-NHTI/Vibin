@@ -14,6 +14,11 @@ public abstract class State
         _pawn = pawn;
     }
 
+    public virtual IEnumerator Update()
+    {
+        Debug.Log("Default State Update");
+        yield break;
+    }
     public virtual IEnumerator OnStateEnter()
     {
 

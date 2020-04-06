@@ -27,17 +27,8 @@ public class PlayerPawn : PWPawn
     public void Update()
     {
         Debug.Log(_currentState);
-        Debug.Log(IsGrounded());
+        StartCoroutine(_currentState.Update());
         Gravity();
-        if(IsGrounded() && jumped)
-        {
-            SetState(new IdleState(this));
-            jumped = false;
-        }
-        if(jumpLimit + jumpHeight < transform.position.y)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-        }
     }
 
 
@@ -66,12 +57,6 @@ public class PlayerPawn : PWPawn
 
     }
 
-    private bool IsGrounded()
-    {
-        int layerMask = 1 << 9;
-        Debug.Log("Checked for ground");
-        return (Physics2D.OverlapArea(topLeftOverlap.transform.position, bottomRightOverlap.transform.position, layerMask));
-    }
     public void Gravity()
     { 
         //Vector2 gravForce = new Vector2(rb.velocity.x, gravity * -1);
