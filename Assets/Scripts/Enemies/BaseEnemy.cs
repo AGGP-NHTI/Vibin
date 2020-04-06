@@ -28,8 +28,8 @@ public class BaseEnemy : PWPawn
     {
         if (vision.sighted == true)
         {
-            currentAction = Chase;
-            vision.sighted = false;
+            currentaction = Chase;
+            
         }
     }
     void Chase()
@@ -38,7 +38,8 @@ public class BaseEnemy : PWPawn
     }
     void Attack()
     {
-        
+        vision.sighted = false;
+
     }
     void Hit()
     {
