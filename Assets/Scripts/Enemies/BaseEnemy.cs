@@ -5,13 +5,14 @@ using UnityEngine;
 public class BaseEnemy : PWPawn
 {
     public Vision vision;
-
+    public Attack attack;
+    public GameObject hitboxspawn;
     Vector3 localScale;
 
     public float idleWidth = 5f;
     public float speed = 2f;
     public float AT = 1f;
-
+    public float damage = 2f;
     bool movingRight = true;
 
     delegate void currentAction();
@@ -70,8 +71,9 @@ public class BaseEnemy : PWPawn
     void Attack()
     {
         startpos = gameObject.transform.position;
+       
+        Attack clone = Instantiate(attack, hitboxspawn.transform.position, hitboxspawn.transform.rotation);
         currentaction = Idle;
-
     }
     void Hit()
     {

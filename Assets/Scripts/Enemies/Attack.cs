@@ -26,7 +26,7 @@ public class Attack : MonoBehaviour
         PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
         if (playerPawn != null)
         {
-
+            playerPawn.TakeDamage(null, damage, null, null);
         }
     }
 }
