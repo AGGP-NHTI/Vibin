@@ -7,11 +7,13 @@ public class BaseEnemy : PWPawn
     public Vision vision;
 
     Vector3 localScale;
+
     public float idleWidth = 5f;
     public float speed = 2f;
     public float AT = 1f;
 
     bool movingRight = true;
+
     delegate void currentAction();
     currentAction currentaction;
 
@@ -59,16 +61,21 @@ public class BaseEnemy : PWPawn
     }
     void Chase()
     {
-
+        startpos = gameObject.transform.position;
+        if (vision.sighted == false)
+        {
+            currentaction = Idle;
+        }
     }
     void Attack()
     {
-        
+        startpos = gameObject.transform.position;
+        currentaction = Idle;
 
     }
     void Hit()
     {
-
+        startpos = gameObject.transform.position;
     }
     void OnCollisionEnter2D(Collision2D collision)
     {

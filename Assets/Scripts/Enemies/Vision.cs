@@ -11,10 +11,6 @@ public class Vision : MonoBehaviour
         sighted = false;
     }            
     
-    void Update()
-    {
-        
-    }
     void OnTriggerEnter2D(Collider2D collider)
     {
         PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
