@@ -5,6 +5,7 @@ using UnityEngine;
 public class Vision : MonoBehaviour
 {
     public bool sighted = false;
+    public BaseEnemy baseEnemy;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class Vision : MonoBehaviour
         if (playerPawn != null)
         {
             sighted = true;
+            baseEnemy.Player = collider.gameObject;
         }
     }
     void OnTriggerExit2D(Collider2D collider)

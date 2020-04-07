@@ -9,10 +9,12 @@ public class BaseEnemy : PWPawn
     public GameObject hitboxspawn;
     Vector3 localScale;
 
+    public GameObject Player;
     public float idleWidth = 5f;
     public float speed = 2f;
     public float AT = 1f;
     public float damage = 2f;
+    public float AttackDistance = 2f;
     bool movingRight = true;
 
     delegate void currentAction();
@@ -25,6 +27,8 @@ public class BaseEnemy : PWPawn
     void Start()
     {
         UpdateStartPos();
+        rightpos.z = startpos.z;
+        leftpos.z = rightpos.z;
         currentaction = Idle;
         localScale = transform.localScale;
     }
@@ -57,13 +61,15 @@ public class BaseEnemy : PWPawn
     void Idle()
     {
         Moving();
-        if (gameObject.transform.position.x > startpos.x)
+        if (movingRight && Vector3.Distance(gameObject.transform.position, leftpos) >= 1)
         {
             movingRight = true;
+            localScale.x *= -1;
         }
-        else
+        else if (!movingRight && Vector3.Distance(gameObject.transform.position, rightpos) >= 1)
         {
             movingRight = false;
+            localScale.x *= -1;
         }
         if (vision.sighted == true)
         {
@@ -73,22 +79,26 @@ public class BaseEnemy : PWPawn
     }
     void Chase()
     {
-        startpos = gameObject.transform.position;
+        if (Vector3.Distance(gameObject.transform.position, Player.transform.position) < AttackDistance)
+        {
+            currentaction = Attack;
+        }
         if (vision.sighted == false)
         {
             currentaction = Idle;
+            UpdateStartPos();
         }
     }
     void Attack()
     {
-        startpos = gameObject.transform.position;
+        UpdateStartPos();
        
         Attack clone = Instantiate(attack, hitboxspawn.transform.position, hitboxspawn.transform.rotation);
         currentaction = Idle;
     }
     void Hit()
     {
-        startpos = gameObject.transform.position;
+        UpdateStartPos();
     }
     
 }
