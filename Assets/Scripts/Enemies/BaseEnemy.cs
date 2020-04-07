@@ -79,6 +79,7 @@ public class BaseEnemy : PWPawn
     }
     void Chase()
     {
+        Moving();
         if (Vector3.Distance(gameObject.transform.position, Player.transform.position) < AttackDistance)
         {
             currentaction = Attack;
