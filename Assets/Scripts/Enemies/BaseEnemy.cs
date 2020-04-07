@@ -19,12 +19,23 @@ public class BaseEnemy : PWPawn
     currentAction currentaction;
 
     Vector3 startpos;
+    Vector3 leftpos;
+    Vector3 rightpos;
     
     void Start()
     {
-        startpos = gameObject.transform.position;
+        UpdateStartPos();
         currentaction = Idle;
         localScale = transform.localScale;
+    }
+    
+    void UpdateStartPos()
+    {
+        startpos = gameObject.transform.position;
+        rightpos.x = startpos.x + idleWidth;
+        leftpos.x = startpos.x - idleWidth;
+        rightpos.y = startpos.y;
+        leftpos.y = startpos.y;
     }
    
     void FixedUpdate()
@@ -79,8 +90,5 @@ public class BaseEnemy : PWPawn
     {
         startpos = gameObject.transform.position;
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-
-    }
+    
 }
