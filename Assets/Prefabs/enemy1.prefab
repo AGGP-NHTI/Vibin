@@ -106,7 +106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2167452966352023940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   damage: 5
   speed: 2
   attacked: 0
+  knockback: 5
   rb: {fileID: 2167452966352023943}
   direction: 0
   hitbox: {fileID: 2167452966414571618}

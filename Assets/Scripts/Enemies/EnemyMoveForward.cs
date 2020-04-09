@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class EnemyMoveForward : BaseEnemy
 {
-    public Rigidbody2D rb;
-    public bool direction = false;
-    Vector3 localScale;
+    
+    
+    
     public enemyhitbox hitbox;
 
-    void Start()
-    {
-        localScale = transform.localScale;
-    }
+    
     void FixedUpdate()
     {
         transform.localScale = localScale;
@@ -22,7 +19,7 @@ public class EnemyMoveForward : BaseEnemy
         }
         else
         {
-            rb.velocity = new Vector3(-1, 0, 10);
+            rb.velocity = new Vector3(-1, rb.velocity.y, 0);
         }
         if (hitbox.hit == true)
         {
