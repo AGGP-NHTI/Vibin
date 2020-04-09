@@ -5,6 +5,8 @@ using UnityEngine;
 public class BaseEnemy : PWPawn
 {
     public int damage = 5;
+    public float speed = 2f;
+    public bool attacked = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +20,14 @@ public class BaseEnemy : PWPawn
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerPawn playerPawn = collision.collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
-        if (playerPawn != null)
+        if (!attacked)
         {
-            playerPawn.TakeDamage(null, damage, null, null);
+            PlayerPawn playerPawn = collision.collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+            if (playerPawn != null)
+            {
+                playerPawn.TakeDamage(null, damage, null, null);
 
+            }
         }
     }
 }
