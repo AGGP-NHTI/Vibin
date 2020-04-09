@@ -7,10 +7,14 @@ public class BaseEnemy : PWPawn
     public int damage = 5;
     public float speed = 2f;
     public bool attacked = false;
+    public float knockback = 5f;
+    public Rigidbody2D rb;
+    protected Vector3 localScale;
+    public bool direction = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        localScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -29,5 +33,9 @@ public class BaseEnemy : PWPawn
 
             }
         }
+    }
+    public void GotHit()
+    {
+
     }
 }
