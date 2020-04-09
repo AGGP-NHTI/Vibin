@@ -18,7 +18,7 @@ public class Vision : MonoBehaviour
         if (playerPawn != null)
         {
             sighted = true;
-            baseEnemy.Player = collider.gameObject;
+            
         }
     }
     void OnTriggerExit2D(Collider2D collider)
