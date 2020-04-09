@@ -11,6 +11,7 @@ public class BaseEnemy : PWPawn
     public Rigidbody2D rb;
     protected Vector3 localScale;
     public bool direction = false;
+    public float pknockback = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +31,12 @@ public class BaseEnemy : PWPawn
             if (playerPawn != null)
             {
                 playerPawn.TakeDamage(null, damage, null, null);
-
+                //playerPawn.rb.Addforce(gameObject.transform.forward * pknockback);
             }
         }
     }
     public void GotHit()
     {
-
+        attacked = true;
     }
 }
