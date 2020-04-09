@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseEnemy : MonoBehaviour
+public class BaseEnemy : PWPawn
 {
+    public int damage = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,14 @@ public class BaseEnemy : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerPawn playerPawn = collision.collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
+        {
+            playerPawn.TakeDamage(null, damage, null, null);
+
+        }
     }
 }
