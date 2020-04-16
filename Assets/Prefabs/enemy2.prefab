@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5586740587517799522, guid: ae518e21252a69b4c9a0c9c5b65d9a78,
     type: 3}
   m_Color: {r: 0.8490566, g: 0.13216448, b: 0.13216448, a: 1}
@@ -156,6 +156,7 @@ MonoBehaviour:
   knockback: 5
   rb: {fileID: 8554753301728639929}
   direction: 0
+  pknockback: 5
   distance: 2
   passed: 1
 --- !u!1 &8554753303544861279

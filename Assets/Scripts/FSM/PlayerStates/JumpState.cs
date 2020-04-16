@@ -12,7 +12,8 @@ public class JumpState : State
     public override IEnumerator Update()
     {
         Debug.Log("In State Update");
-        
+
+        _pawn.Anim.SetBool("PlayerGrounded", IsGrounded());
         if (IsGrounded() && _pawn.jumped)
         {
             _pawn.SetState(new IdleState(_pawn));
@@ -44,7 +45,7 @@ public class JumpState : State
         yield break;
     }
 
-    private bool IsGrounded()
+     private bool IsGrounded()
     {
         int layerMask = 1 << 9;
         Debug.Log("Checked for ground");

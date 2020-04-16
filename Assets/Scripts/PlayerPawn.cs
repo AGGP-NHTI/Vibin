@@ -7,6 +7,7 @@ public class PlayerPawn : PWPawn
 {
     private State _currentState;
     public Rigidbody2D rb;
+    public Animator Anim;
 
     public GameObject topLeftOverlap;
     public GameObject bottomRightOverlap;
@@ -29,6 +30,8 @@ public class PlayerPawn : PWPawn
     {
         Debug.Log(_currentState);
         StartCoroutine(_currentState.Update());
+        Anim.SetFloat("PlayerJumpVelocity", rb.velocity.y);
+        Anim.SetBool("PlayerJumped", jumped);
         Gravity();
     }
 
