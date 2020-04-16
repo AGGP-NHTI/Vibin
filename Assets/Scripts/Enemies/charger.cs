@@ -27,6 +27,6 @@ public class charger : BaseEnemy
     }
     public void charge()
     {
-        rb.velocity = new Vector3(speed, rb.velocity.y, 0);
+        rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
     }
 }
