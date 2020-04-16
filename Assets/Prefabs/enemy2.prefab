@@ -156,6 +156,7 @@ MonoBehaviour:
   knockback: 5
   rb: {fileID: 8554753301728639929}
   direction: 0
+  pknockback: 5
   distance: 2
   passed: 1
 --- !u!1 &8554753303544861279
