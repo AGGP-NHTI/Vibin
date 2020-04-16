@@ -26,11 +26,11 @@ public class BaseEnemy : PWPawn
     {
         slider.value = Health;
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (!attacked)
         {
-            PlayerPawn playerPawn = collision.collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+            PlayerPawn playerPawn = collision.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
             if (playerPawn != null)
             {
                 playerPawn.TakeDamage(null, damage, null, null);
