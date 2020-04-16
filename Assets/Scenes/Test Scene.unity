@@ -243,7 +243,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12781611, y: 0}
+  m_Offset: {x: -0.1696904, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -254,7 +254,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.53191525, y: 1}
+  m_Size: {x: 0.44816667, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &93931478
 Rigidbody2D:
@@ -345,15 +345,16 @@ MonoBehaviour:
   StartingHealth: 100
   Health: 100
   rb: {fileID: 0}
+  Anim: {fileID: 93931481}
   topLeftOverlap: {fileID: 1462870944}
   bottomRightOverlap: {fileID: 776184112}
   SlamSpeed: 20
   jumped: 0
-  walkSpeed: 9
+  walkSpeed: 5
   runSpeed: 0
   jumpLimit: 0
-  jumpHeight: 4
-  jumpSpeed: 10
+  jumpHeight: 3
+  jumpSpeed: 8
   gravity: 9
 --- !u!95 &93931481
 Animator:
@@ -21797,7 +21798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776184112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.467, y: -0.544, z: 0}
+  m_LocalPosition: {x: 0.032, y: -0.544, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 93931476}
@@ -22041,7 +22042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462870944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: -0.475, z: 0}
+  m_LocalPosition: {x: -0.311, y: -0.514, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 93931476}

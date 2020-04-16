@@ -31,7 +31,8 @@ public class PlayerPawn : PWPawn
         Debug.Log(_currentState);
         StartCoroutine(_currentState.Update());
         Anim.SetFloat("PlayerJumpVelocity", rb.velocity.y);
-        Anim.SetBool("PlayerJumped", jumped);
+        Anim.SetFloat("Horizontal", rb.velocity.x);
+
         Gravity();
     }
 
