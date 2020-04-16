@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5586740587517799522, guid: ae518e21252a69b4c9a0c9c5b65d9a78,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -156,6 +156,8 @@ MonoBehaviour:
   knockback: 5
   rb: {fileID: 2167452966352023943}
   direction: 0
+  pknockback: 5
+  slider: {fileID: 0}
   hitbox: {fileID: 2167452966414571618}
 --- !u!1 &2167452966414571617
 GameObject:

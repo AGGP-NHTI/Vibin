@@ -243,7 +243,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1696904, y: 0}
+  m_Offset: {x: -0.14859626, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -254,7 +254,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.44816667, y: 1}
+  m_Size: {x: 0.40597838, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &93931478
 Rigidbody2D:
@@ -18119,7 +18119,7 @@ PrefabInstance:
     - target: {fileID: 2167452966352023941, guid: 8f602bae2ed145645bcb1b2dc0a1af46,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2167452966352023941, guid: 8f602bae2ed145645bcb1b2dc0a1af46,
         type: 3}
@@ -22480,7 +22480,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5586740587517799522, guid: ae518e21252a69b4c9a0c9c5b65d9a78,
     type: 3}
   m_Color: {r: 0.8490566, g: 0.13216448, b: 0.13216448, a: 1}
@@ -22575,7 +22575,7 @@ PrefabInstance:
     - target: {fileID: 1910122077861488221, guid: 9115447d91796f44dbf8ed384ab1c0ee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1910122077861488221, guid: 9115447d91796f44dbf8ed384ab1c0ee,
         type: 3}
