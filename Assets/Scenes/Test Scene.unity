@@ -350,7 +350,7 @@ MonoBehaviour:
   bottomRightOverlap: {fileID: 776184112}
   SlamSpeed: 20
   jumped: 0
-  walkSpeed: 5
+  walkSpeed: 4
   runSpeed: 0
   jumpLimit: 0
   jumpHeight: 3
