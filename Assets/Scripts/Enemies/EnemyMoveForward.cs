@@ -38,13 +38,5 @@ public class EnemyMoveForward : BaseEnemy
 
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        PlayerPawn playerPawn = collision.collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
-        if (playerPawn == null)
-        {
-            playerPawn.TakeDamage(null, damage, null, null);
-
-        }
-    }
+    
 }
