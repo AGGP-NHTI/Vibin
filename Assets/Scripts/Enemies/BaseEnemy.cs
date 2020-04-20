@@ -38,7 +38,7 @@ public class BaseEnemy : PWPawn
             }
         }
     }
-    public void GotHit()
+    public virtual void GotHit()
     {
         rb.AddForce(gameObject.transform.up * knockback);
         rb.AddForce(gameObject.transform.right * knockback);
