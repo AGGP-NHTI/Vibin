@@ -8,6 +8,7 @@ public class EnemyProjectile : MonoBehaviour
     public float speed;
     public float LT = 5f;
 
+    public bool isElectric = false;
     
     void FixedUpdate()
     {
