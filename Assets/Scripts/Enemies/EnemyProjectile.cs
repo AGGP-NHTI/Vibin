@@ -8,16 +8,20 @@ public class EnemyProjectile : MonoBehaviour
     public float speed;
     public float LT = 5f;
 
-    public bool isElectric = false;
+    
     
     void FixedUpdate()
     {
-        gameObject.transform.position += (speed * gameObject.transform.forward * Time.fixedDeltaTime);
-        LT -= Time.fixedDeltaTime;
+        Move();
         if (LT <= 0)
         {
             Destroy(gameObject);
         }
+    }
+    public virtual void Move()
+    {
+        gameObject.transform.position += (-speed * gameObject.transform.right * Time.fixedDeltaTime);
+        LT -= Time.fixedDeltaTime;
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -25,6 +29,7 @@ public class EnemyProjectile : MonoBehaviour
         if (playerPawn != null)
         {
             playerPawn.TakeDamage(null, damage, null, null);
+            Destroy(gameObject);
         }
     }
 }

@@ -7,7 +7,7 @@ public class SecurityGuard : BaseEnemy
     public Vision vision;
     public EnemyProjectile projectile;
     public GameObject spawnpoint;
-    public GameObject parent;
+    
     public float rechargeTime = 4f;
     float currenttime;
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class SecurityGuard : BaseEnemy
             {
                 EnemyProjectile clone;
                 clone = Instantiate(projectile, spawnpoint.transform.position, spawnpoint.transform.rotation);
-                clone.transform.SetParent(parent.transform);
+                
                 currenttime = rechargeTime;
             }
         }
