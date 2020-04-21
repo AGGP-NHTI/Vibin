@@ -8,7 +8,7 @@ public class taser : EnemyProjectile
     public bool tasing;
 
     float walkSpeed;
-    
+    public GameObject sound;
     // Update is called once per frame
     
     void OnTriggerEnter2D(Collider2D collider)
@@ -19,7 +19,7 @@ public class taser : EnemyProjectile
             tasing = true;
             walkSpeed = playerPawn.walkSpeed;
             playerPawn.walkSpeed = 0;
-            
+            sound.SetActive(true);
         }
     }
     void OnTriggerExit2D(Collider2D collider)
