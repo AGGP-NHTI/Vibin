@@ -11,46 +11,71 @@ public class Boss : BaseEnemy
     public float downtime;
     float currenttime;
     public GameObject Mouth;
-    public GameObject parent;
+    
+    public BossLocation location;
+    public float range;
+    public bool FB = false;
+    public List<GameObject> IdleList;
+    public int IdleListIndex = 0;
 
-    bool FB = false;
-    public GameObject HFirePoint1;
-    public GameObject HFirePoint2;
+    public List<GameObject> HfireList;
+    public int HFireListIndex = 0;
+
+    GameObject currentTarget;
+
     public GameObject SpinPoint;
     int index = 0;
-    
+    bool spinning = false;
 
     // Start is called before the first frame update
     void Start()
     {
         currenttime = downtime;
-        currentaction = HFire; 
+        currentaction = Idle;
+        location.movespeed = speed;
+        location.WithinRange = range;
     }
+    
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!spinning)
+        {
+            gameObject.transform.position = location.transform.position;
+        }
         if (FB)
         {
             EnemyProjectile clone;
             clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);
-            clone.transform.SetParent(parent.transform);
+            
         }
         currentaction();
     }
     public void Idle()
     {
+        location.currentTarget = IdleList[IdleListIndex];
         currenttime -= Time.fixedDeltaTime;
-        if (currenttime <= 0)
+        if (location.IsCloseToTarget())
         {
-            currenttime = downtime;
-            if (index == 1)
+            if (IdleListIndex >= IdleList.Capacity - 1)
             {
-                currentaction = HFire;
+                IdleListIndex = 0;
+            }
+            else
+            {
+                IdleListIndex++;
+            }
+            if (currenttime <= 0)
+            {
+                currenttime = downtime;
+                if (index == 1)
+                {
+                    currentaction = HFire;
+                }
             }
         }
     }
-
     public void HFire()
     {
         bool finished = false;

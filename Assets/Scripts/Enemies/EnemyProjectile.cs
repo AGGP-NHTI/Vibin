@@ -7,7 +7,7 @@ public class EnemyProjectile : MonoBehaviour
     public float damage;
     public float speed;
     public float LT = 5f;
-
+    public bool penetrate = false;
     
     
     void FixedUpdate()
@@ -29,7 +29,10 @@ public class EnemyProjectile : MonoBehaviour
         if (playerPawn != null)
         {
             playerPawn.TakeDamage(null, damage, null, null);
-            Destroy(gameObject);
+            if (!penetrate)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
