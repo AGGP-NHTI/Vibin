@@ -51,7 +51,7 @@ public class JumpState : State
         Debug.Log("Checked for ground");
         return (Physics2D.OverlapArea(_pawn.topLeftOverlap.transform.position, _pawn.bottomRightOverlap.transform.position, layerMask));
     }
-    public override IEnumerator Jump(float value)
+    public override IEnumerator Jump(bool value)
     {
 
         yield break;

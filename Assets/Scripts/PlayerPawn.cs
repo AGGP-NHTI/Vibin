@@ -47,7 +47,7 @@ public class PlayerPawn : PWPawn
         StartCoroutine(_currentState.Walk(value));
     }
 
-    public override void Vertical(float value)
+    public override void Vertical(bool value)
     {
         StartCoroutine(_currentState.Jump(value));
     }

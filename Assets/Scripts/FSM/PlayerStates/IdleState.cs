@@ -8,9 +8,9 @@ public class IdleState : State
     {
     }
 
-    public override IEnumerator Jump(float value)
+    public override IEnumerator Jump(bool value)
     {
-        if(value > 0)
+        if(value)
         {
             _pawn.jumpLimit = _pawn.gameObject.transform.position.y;
             _pawn.rb.velocity = new Vector2(_pawn.rb.velocity.x, _pawn.jumpSpeed);

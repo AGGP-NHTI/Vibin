@@ -22,7 +22,7 @@ public class PWPlayerController : PlayerController
         }
     }
 
-    public override void Vertical(float value)
+    public override void Vertical(bool value)
     {
         PWPawn PWP = ((PWPawn)PossesedPawn);
         if (PWP)

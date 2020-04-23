@@ -180,7 +180,7 @@ public class InputPoller : Info
         // Example Input binding. 
 
         IS.AddAxis("Horizontal", Input.GetAxis("Horizontal"));
-        IS.AddAxis("Vertical", Input.GetAxis("Vertical"));
+        IS.AddButton("Vertical", Input.GetButtonDown("Vertical"));
         IS.AddButton("Fire1", Input.GetButtonDown("Fire1"));
         IS.AddButton("Fire2", Input.GetButtonDown("Fire2"));
         IS.AddButton("Fire3", Input.GetButtonDown("Fire3"));

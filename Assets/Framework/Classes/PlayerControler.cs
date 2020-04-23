@@ -120,7 +120,7 @@ public class PlayerController : Controller
     public virtual void DefaultBinds()
     {
         AddAxis("Horizontal", Horizontal);
-        AddAxis("Vertical", Vertical);
+        AddButton("Vertical", Vertical);
         AddButton("Fire1", Fire1);
         AddButton("Fire2", Fire2);
         AddButton("Fire3", Fire3);
@@ -135,9 +135,9 @@ public class PlayerController : Controller
         }
     }
 
-    public virtual void Vertical(float value)
+    public virtual void Vertical(bool value)
     {
-        if (value != 0)
+        if (value)
         {
             LOG("Del-Vertical (" + value +")");
         }       

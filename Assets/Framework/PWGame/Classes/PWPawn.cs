@@ -12,7 +12,7 @@ public class PWPawn : Pawn {
        
     }
 
-    public virtual void Vertical(float value)
+    public virtual void Vertical(bool value)
     {
        
     }

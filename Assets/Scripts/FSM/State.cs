@@ -40,7 +40,7 @@ public abstract class State
         yield break;
     }
 
-    public virtual IEnumerator Jump(float value)
+    public virtual IEnumerator Jump(bool value)
     {
 
         yield break;
