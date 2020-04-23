@@ -8,8 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject Main;
     public GameObject Options;
+
     public Slider slider;
     public Slider slider2;
+
+    public AudioSource audioSource;
+
     void Start()
     {
         slider2.value = PlayerPrefs.GetFloat("Effects", 0.5f);
@@ -43,6 +47,7 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("Music", slider.value);
         PlayerPrefs.Save();
+        audioSource.volume = PlayerPrefs.GetFloat("Music");
     }
     public void ChangeEffectVolume()
     {
