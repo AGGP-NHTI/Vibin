@@ -80,6 +80,26 @@ public class Boss : BaseEnemy
     {
         bool finished = false;
 
+        location.currentTarget = HfireList[HFireListIndex];
+        if (location.IsCloseToTarget())
+        {
+            if (HFireListIndex <= HfireList.Capacity - 1)
+            {
+                HFireListIndex++;
+                if (HFireListIndex == 1 || HFireListIndex == 3)
+                {
+                    FB = true;
+                }
+                else
+                {
+                    FB = false;
+                }
+            }
+            else
+            {
+                finished = true;
+            }
+        }
         if (finished)
         {
             finished = false;

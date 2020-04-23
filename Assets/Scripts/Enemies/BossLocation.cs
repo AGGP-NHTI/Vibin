@@ -19,7 +19,7 @@ public class BossLocation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         MoveDirection = (currentTarget.transform.position - transf.position).normalized;
         transf.position += (Time.deltaTime * MoveDirection * movespeed);
