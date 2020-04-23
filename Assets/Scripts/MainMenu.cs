@@ -9,10 +9,11 @@ public class MainMenu : MonoBehaviour
     public GameObject Main;
     public GameObject Options;
     public Slider slider;
+    public Slider slider2;
     void Start()
     {
-       
-        slider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
+        slider2.value = PlayerPrefs.GetFloat("Effects", 0.5f);
+        slider.value = PlayerPrefs.GetFloat("Music", 0.5f);
     }
    
     public void PlayGame()
@@ -38,9 +39,14 @@ public class MainMenu : MonoBehaviour
         Main.SetActive(true);
         Options.SetActive(false);
     }
-    public void ChangeVolume()
+    public void ChangeMusicVolume()
     {
-        PlayerPrefs.SetFloat("Volume", slider.value);
+        PlayerPrefs.SetFloat("Music", slider.value);
+        PlayerPrefs.Save();
+    }
+    public void ChangeEffectVolume()
+    {
+        PlayerPrefs.SetFloat("Effects", slider2.value);
         PlayerPrefs.Save();
     }
 }
