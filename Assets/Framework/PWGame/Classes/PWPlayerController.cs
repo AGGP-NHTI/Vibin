@@ -29,9 +29,7 @@ public class PWPlayerController : PlayerController
         {
             PWP.Vertical(value);
         }
-
     }
-
 
     public override void Fire1(bool value)
     {
@@ -45,8 +43,6 @@ public class PWPlayerController : PlayerController
             {
                 PWP.Fire1(value);
             }
-
-
         }
     }
 

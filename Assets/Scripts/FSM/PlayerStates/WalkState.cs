@@ -21,6 +21,22 @@ public class WalkState : State
         yield break;
     }
 
+    public override IEnumerator LightAttack(bool value)
+    {
+        if(value)
+        {
+            if (_pawn.rb.velocity.x < -0.1)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+        yield break;
+    }
+
     public override IEnumerator Walk(float value)
     {
         if(value == 0)

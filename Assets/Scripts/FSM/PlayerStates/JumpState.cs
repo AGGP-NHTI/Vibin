@@ -30,10 +30,7 @@ public class JumpState : State
 
     public override IEnumerator HeavyAttack(bool value)
     {
-
-        
             _pawn.rb.velocity = new Vector2(0, _pawn.SlamSpeed * -1);
-        
 
         yield break;
     }

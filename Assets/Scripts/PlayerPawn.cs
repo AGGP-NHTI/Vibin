@@ -9,6 +9,8 @@ public class PlayerPawn : PWPawn
     public Rigidbody2D rb;
     public Animator Anim;
 
+    public GameObject AttackRight;
+    public GameObject AttackLeft;
     public GameObject topLeftOverlap;
     public GameObject bottomRightOverlap;
     public float SlamSpeed;
@@ -54,7 +56,7 @@ public class PlayerPawn : PWPawn
 
     public override void Fire1(bool value)
     {
-
+        StartCoroutine(_currentState.LightAttack(value));
     }
 
     public override void Fire2(bool value)
