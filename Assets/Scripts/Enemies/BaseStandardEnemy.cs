@@ -9,7 +9,8 @@ public class BaseStandardEnemy : BaseEnemy
 
     public enemyhitbox groundcheck;
     public float deathtime = 2f;
-    
+    public Rigidbody2D rb;
+
     bool FF = true;
     
     void FixedUpdate()

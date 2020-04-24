@@ -9,7 +9,7 @@ public class BaseEnemy : PWPawn
     public float speed = 2f;
     public bool attacked = false;
     public float knockback = 5f;
-    public Rigidbody2D rb;
+    
     protected Vector3 localScale;
     public bool direction = false;
     public float pknockback = 5f;
