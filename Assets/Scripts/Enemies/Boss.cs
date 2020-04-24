@@ -24,10 +24,11 @@ public class Boss : BaseEnemy
     GameObject currentTarget;
 
     public GameObject SpinPoint;
+    public GameObject back;
     int index = 0;
     bool spinning = false;
-
-    // Start is called before the first frame update
+    
+    
     void Start()
     {
         currenttime = downtime;
@@ -36,8 +37,6 @@ public class Boss : BaseEnemy
         location.WithinRange = range;
     }
     
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (!spinning)
@@ -56,6 +55,7 @@ public class Boss : BaseEnemy
     {
         location.currentTarget = IdleList[IdleListIndex];
         currenttime -= Time.fixedDeltaTime;
+        FB = false;
         if (location.IsCloseToTarget())
         {
             if (IdleListIndex >= IdleList.Capacity - 1)
@@ -69,9 +69,15 @@ public class Boss : BaseEnemy
             if (currenttime <= 0)
             {
                 currenttime = downtime;
-                if (index == 1)
+                if (index == 0)
                 {
                     currentaction = HFire;
+                    index++;
+                }
+                if (index == 1)
+                {
+                    currentaction = Spin;
+                    index++;
                 }
             }
         }
@@ -83,7 +89,7 @@ public class Boss : BaseEnemy
         location.currentTarget = HfireList[HFireListIndex];
         if (location.IsCloseToTarget())
         {
-            if (HFireListIndex <= HfireList.Capacity - 1)
+            if (HFireListIndex <= HfireList.Capacity - 2)
             {
                 HFireListIndex++;
                 if (HFireListIndex == 1 || HFireListIndex == 3)
@@ -109,9 +115,22 @@ public class Boss : BaseEnemy
     }
     public void Spin()
     {
+        location.currentTarget = back;
+
+        if (location.IsCloseToTarget())
+        {
+            currentaction = Spin2;
+        }
 
     }
+    public void Spin2()
+    {
+        spinning = true;
 
+        gameObject.transform.SetParent(SpinPoint.transform);
+
+        FB = true;
+    }
     public override void GotHit()
     {
 
