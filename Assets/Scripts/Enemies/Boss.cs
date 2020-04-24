@@ -131,8 +131,5 @@ public class Boss : BaseEnemy
 
         FB = true;
     }
-    public override void GotHit()
-    {
-
-    }
+    
 }

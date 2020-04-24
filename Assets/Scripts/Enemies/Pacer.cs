@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pacer : BaseEnemy
+public class Pacer : BaseKnight
 {
     public float distance = 2f;
     Vector3 startpos;
     public bool passed = false;
-    // Start is called before the first frame update
+    
     void Start()
     {
         startpos = gameObject.transform.position;
         localScale = transform.localScale;
+        currentaction = Default;
     }
 
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         transform.localScale = localScale;
+        currentaction();
+        
+    }
+    public override void Default()
+    {
         if (direction)
         {
             rb.velocity = new Vector3(1, rb.velocity.y, 0);
@@ -33,13 +39,13 @@ public class Pacer : BaseEnemy
             {
                 direction = false;
                 passed = false;
-                
+
             }
             else if (!direction)
             {
                 direction = true;
                 passed = false;
-                
+
             }
         }
         if (Vector3.Distance(gameObject.transform.position, startpos) < (distance / 2))

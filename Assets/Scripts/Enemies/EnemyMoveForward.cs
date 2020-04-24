@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMoveForward : BaseEnemy
-{
-    
-    
-    
+public class EnemyMoveForward : BaseKnight
+{   
     public enemyhitbox hitbox;
+   
+    void Start()
+    {
+        currentaction = Default;
+    }
 
-    
     void FixedUpdate()
+    {
+        currentaction();      
+    }
+
+    public override void Default()
     {
         transform.localScale = localScale;
         if (direction)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SecurityGuard : BaseEnemy
+public class SecurityGuard : BaseStandardEnemy
 {
     public Vision vision;
     public EnemyProjectile projectile;
@@ -14,10 +14,15 @@ public class SecurityGuard : BaseEnemy
     void Start()
     {
         currenttime = rechargeTime;
+        currentaction = Default;
     }
 
     // Update is called once per frame
     void FixedUpdate()
+    {
+        currentaction();
+    }
+    public override void Default()
     {
         currenttime -= Time.fixedDeltaTime;
         if (currenttime <= 0)
@@ -26,7 +31,7 @@ public class SecurityGuard : BaseEnemy
             {
                 EnemyProjectile clone;
                 clone = Instantiate(projectile, spawnpoint.transform.position, spawnpoint.transform.rotation);
-                
+
                 currenttime = rechargeTime;
             }
         }

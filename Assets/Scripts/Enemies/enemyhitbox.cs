@@ -5,6 +5,7 @@ using UnityEngine;
 public class enemyhitbox : MonoBehaviour
 {
     public bool hit = false;
+    public bool bash = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,10 @@ public class enemyhitbox : MonoBehaviour
         {
             hit = true;
 
+        }
+        else
+        {
+            bash = true;
         }
     }
     void OnTriggerExit2D(Collider2D collider)
