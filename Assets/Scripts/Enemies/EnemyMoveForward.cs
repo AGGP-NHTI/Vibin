@@ -8,6 +8,7 @@ public class EnemyMoveForward : BaseKnight
    
     void Start()
     {
+        slider.maxValue = StartingHealth;
         currentaction = Default;
     }
 

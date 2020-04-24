@@ -8,15 +8,9 @@ public class BaseStandardEnemy : BaseEnemy
     public currentAction currentaction;
 
     public enemyhitbox groundcheck;
-
+    public float deathtime = 2f;
     
     bool FF = true;
-    
-    void Start()
-    {
-        
-    }
-
     
     void FixedUpdate()
     {
@@ -55,6 +49,10 @@ public class BaseStandardEnemy : BaseEnemy
     }
     public virtual void Die()
     {
-
+        deathtime -= Time.fixedDeltaTime;
+        if (deathtime <= 0)
+        {
+            Destroy(Parent);
+        }
     }
 }

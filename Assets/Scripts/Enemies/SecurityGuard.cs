@@ -10,14 +10,15 @@ public class SecurityGuard : BaseStandardEnemy
     
     public float rechargeTime = 4f;
     float currenttime;
-    // Start is called before the first frame update
+    
     void Start()
     {
+        slider.maxValue = StartingHealth;
         currenttime = rechargeTime;
         currentaction = Default;
     }
 
-    // Update is called once per frame
+   
     void FixedUpdate()
     {
         currentaction();

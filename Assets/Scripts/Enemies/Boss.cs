@@ -31,6 +31,7 @@ public class Boss : BaseEnemy
     
     void Start()
     {
+        slider.maxValue = StartingHealth;
         currenttime = downtime;
         currentaction = Idle;
         location.movespeed = speed;

@@ -14,14 +14,14 @@ public class BaseEnemy : PWPawn
     public bool direction = false;
     public float pknockback = 5f;
     public Slider slider;
-
+    public GameObject Parent;
     public bool KBdir = false;
 
    
     void Start()
     {
         localScale = transform.localScale;
-        slider.maxValue = StartingHealth;
+        
     }
 
     void Update()

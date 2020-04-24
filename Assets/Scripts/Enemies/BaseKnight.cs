@@ -13,6 +13,7 @@ public class BaseKnight : BaseStandardEnemy
 
     void Start()
     {
+        
         timeleft = attacktime;
         sword.transform.gameObject.SetActive(false);
     }

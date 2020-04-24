@@ -861,8 +861,10 @@ MonoBehaviour:
   direction: 0
   pknockback: 5
   slider: {fileID: 3697565382411633775}
+  Parent: {fileID: 3697565382283973100}
   KBdir: 0
   groundcheck: {fileID: 2342727634836934926}
+  deathtime: 2
   sight: {fileID: 8802473774502372879}
   sword: {fileID: 8802473774502372879}
   attacktime: 1

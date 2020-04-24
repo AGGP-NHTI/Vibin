@@ -10,6 +10,7 @@ public class Pacer : BaseKnight
     
     void Start()
     {
+        slider.maxValue = StartingHealth;
         startpos = gameObject.transform.position;
         localScale = transform.localScale;
         currentaction = Default;

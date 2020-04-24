@@ -10,6 +10,7 @@ public class charger : BaseStandardEnemy
    
     void Start()
     {
+        slider.maxValue = StartingHealth;
         currentaction = Default;
     }
 
