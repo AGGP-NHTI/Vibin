@@ -72,6 +72,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: 0
   bash: 0
+  damaging: 1
+  baseEnemy: {fileID: 5439928401284680860}
 --- !u!1 &5439928401284680855
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +449,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: 0
   bash: 0
+  damaging: 0
+  baseEnemy: {fileID: 5439928401284680860}
 --- !u!61 &5439928402564310390
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1100,3 +1104,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: 0
   bash: 0
+  damaging: 0
+  baseEnemy: {fileID: 0}

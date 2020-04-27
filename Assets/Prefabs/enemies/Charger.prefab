@@ -304,7 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2052405450947999510}
   m_Layer: 0
-  m_Name: enemy 3
+  m_Name: Charger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,7 +738,6 @@ MonoBehaviour:
   speed: 2
   attacked: 0
   knockback: 5
-  rb: {fileID: 7150911591483855783}
   direction: 0
   pknockback: 5
   slider: {fileID: 2052405451789311610}
@@ -746,6 +745,7 @@ MonoBehaviour:
   KBdir: 0
   groundcheck: {fileID: 4230266465654993785}
   deathtime: 2
+  rb: {fileID: 7150911591483855783}
   vision: {fileID: 77402780901397329}
   EnemyHitBox: {fileID: 7150911593165421122}
 --- !u!50 &7150911591483855783
@@ -867,6 +867,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: 0
   bash: 0
+  damaging: 1
+  baseEnemy: {fileID: 7150911591483855779}
 --- !u!61 &7150911593165421123
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -965,3 +967,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: 0
   bash: 0
+  damaging: 0
+  baseEnemy: {fileID: 0}

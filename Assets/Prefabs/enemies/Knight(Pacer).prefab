@@ -299,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3697565382283973103}
   m_Layer: 0
-  m_Name: enemy 2
+  m_Name: Knight(Pacer)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,6 +627,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: 0
   bash: 0
+  damaging: 0
+  baseEnemy: {fileID: 0}
 --- !u!1 &8802473774502372876
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: 0
   bash: 0
+  damaging: 1
+  baseEnemy: {fileID: 8802473775235944430}
 --- !u!61 &8802473774502372878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -857,7 +861,6 @@ MonoBehaviour:
   speed: 2
   attacked: 0
   knockback: 5
-  rb: {fileID: 8802473775235944426}
   direction: 0
   pknockback: 5
   slider: {fileID: 3697565382411633775}
@@ -865,6 +868,7 @@ MonoBehaviour:
   KBdir: 0
   groundcheck: {fileID: 2342727634836934926}
   deathtime: 2
+  rb: {fileID: 8802473775235944426}
   sight: {fileID: 8802473774502372879}
   sword: {fileID: 8802473774502372879}
   attacktime: 1

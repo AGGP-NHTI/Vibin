@@ -6,14 +6,19 @@ public class enemyhitbox : MonoBehaviour
 {
     public bool hit = false;
     public bool bash = false;
-    
+
+    public bool damaging = false;
+    public BaseEnemy baseEnemy;
     void OnTriggerEnter2D(Collider2D collider)
     {
         PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
         if (playerPawn == null)
         {
             hit = true;
-
+            if (damaging)
+            {
+                playerPawn.TakeDamage(null, baseEnemy.damage, null, null);
+            }
         }
         else
         {
@@ -27,6 +32,10 @@ public class enemyhitbox : MonoBehaviour
         {
             hit = false;
 
+        }
+        else
+        {
+            bash = false;
         }
     }
 }
