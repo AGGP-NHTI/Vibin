@@ -2,31 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class charger : BaseEnemy
+public class charger : BaseStandardEnemy
 {
     public Vision vision;
-    bool charged = false;
+    public enemyhitbox EnemyHitBox;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
-        
+        slider.maxValue = StartingHealth;
+        currentaction = Default;
     }
 
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         if (vision.sighted == true)
         {
-            charged = true;
+            currentaction = charge;
         }
-        if (charged)
-        {
-            charge();
-        }
+        
     }
     public void charge()
     {
         rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
+        if (EnemyHitBox.bash)
+        {
+            currentaction = Die;
+        }
     }
 }

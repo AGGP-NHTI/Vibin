@@ -6,6 +6,8 @@ public class Boss : BaseEnemy
 {
     delegate void currentAction();
     currentAction currentaction;
+    currentAction nextaction;
+    
 
     public EnemyProjectile fire;
     public float downtime;
@@ -15,6 +17,10 @@ public class Boss : BaseEnemy
     public BossLocation location;
     public float range;
     public bool FB = false;
+    bool ff = true;
+   
+    public AudioSource source;
+
     public List<GameObject> IdleList;
     public int IdleListIndex = 0;
 
@@ -25,16 +31,19 @@ public class Boss : BaseEnemy
 
     public GameObject SpinPoint;
     public GameObject back;
-    int index = 0;
+   
+    public int index = 0;
     bool spinning = false;
-    
+    bool passed = false;
     
     void Start()
     {
+        slider.maxValue = StartingHealth;
         currenttime = downtime;
         currentaction = Idle;
         location.movespeed = speed;
         location.WithinRange = range;
+        nextaction = Spin;
     }
     
     void FixedUpdate()
@@ -69,23 +78,16 @@ public class Boss : BaseEnemy
             if (currenttime <= 0)
             {
                 currenttime = downtime;
-                if (index == 0)
-                {
-                    currentaction = HFire;
-                    index++;
-                }
-                if (index == 1)
-                {
-                    currentaction = Spin;
-                    index++;
-                }
+                
+                currentaction = nextaction;                    
+                
             }
         }
     }
     public void HFire()
     {
         bool finished = false;
-
+        
         location.currentTarget = HfireList[HFireListIndex];
         if (location.IsCloseToTarget())
         {
@@ -95,22 +97,25 @@ public class Boss : BaseEnemy
                 if (HFireListIndex == 1 || HFireListIndex == 3)
                 {
                     FB = true;
+                    source.UnPause();
                 }
                 else
                 {
                     FB = false;
+                    source.Pause();
                 }
             }
             else
             {
                 finished = true;
+                HFireListIndex = 0;
             }
         }
         if (finished)
         {
             finished = false;
             currentaction = Idle;
-            index++;
+            nextaction = Spin;
         }
     }
     public void Spin()
@@ -125,14 +130,33 @@ public class Boss : BaseEnemy
     }
     public void Spin2()
     {
-        spinning = true;
-
-        gameObject.transform.SetParent(SpinPoint.transform);
-
-        FB = true;
+        if (ff)
+        {
+            FB = true;
+            source.Play();
+            ff = false;
+            gameObject.transform.SetParent(SpinPoint.transform);
+            spinning = true;
+            nextaction = HFire;
+            
+        }
+    
+        if (gameObject.transform.position.x <= SpinPoint.transform.position.x)
+        {
+            passed = true;
+        }
+        if (passed && Vector3.Distance(back.transform.position, gameObject.transform.position) <= 1)
+        {
+            gameObject.transform.SetParent(null);
+            gameObject.transform.rotation = Quaternion.identity;
+            spinning = false;
+            currentaction = Idle;
+            passed = false;
+            FB = false;
+            source.Stop();
+            ff = true;
+        }
+        
     }
-    public override void GotHit()
-    {
-
-    }
+    
 }

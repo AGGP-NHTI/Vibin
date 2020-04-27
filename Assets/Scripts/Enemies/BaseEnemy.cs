@@ -9,19 +9,21 @@ public class BaseEnemy : PWPawn
     public float speed = 2f;
     public bool attacked = false;
     public float knockback = 5f;
-    public Rigidbody2D rb;
+    
     protected Vector3 localScale;
     public bool direction = false;
     public float pknockback = 5f;
     public Slider slider;
-    // Start is called before the first frame update
+    
+    public bool KBdir = false;
+
+   
     void Start()
     {
         localScale = transform.localScale;
-        slider.maxValue = StartingHealth;
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         slider.value = Health;
@@ -38,10 +40,5 @@ public class BaseEnemy : PWPawn
             }
         }
     }
-    public virtual void GotHit()
-    {
-        rb.AddForce(gameObject.transform.up * knockback);
-        rb.AddForce(gameObject.transform.right * knockback);
-        attacked = true;
-    }
+    
 }
