@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public AudioSource Song;
     public AudioSource pausesong;
     public AudioClip pausemusic;
+
     public bool isPaused = false;
 
     void Start()
