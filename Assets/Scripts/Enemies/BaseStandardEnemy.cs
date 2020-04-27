@@ -6,7 +6,7 @@ public class BaseStandardEnemy : BaseEnemy
 {
     public delegate void currentAction();
     public currentAction currentaction;
-
+    public GameObject Parent;
     public enemyhitbox groundcheck;
     public float deathtime = 2f;
     public Rigidbody2D rb;
