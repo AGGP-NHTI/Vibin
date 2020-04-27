@@ -8,11 +8,15 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject Menu;
 
+    public AudioSource Song;
+    public AudioSource pausesong;
+    public AudioClip pausemusic;
     public bool isPaused = false;
 
     void Start()
     {
         Menu.SetActive(false);
+        pausesong.volume = PlayerPrefs.GetFloat("Music");
     }
 
     void Update()
@@ -33,12 +37,16 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnPause()
     {
+        Song.Pause();
+        pausesong.Play();
         isPaused = true;
         Menu.SetActive(true);
         Time.timeScale = 0f;
     }
     public void OnUnpause()
     {
+        pausesong.Stop();
+        Song.UnPause();
         isPaused = false;
         Menu.SetActive(false);
         Time.timeScale = 1f;

@@ -8,6 +8,9 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject Main;
     public GameObject Options;
+    public AudioClip select;
+    public AudioClip goback;
+    public AudioSource source;
 
     public Slider slider;
     public Slider slider2;
@@ -35,11 +38,13 @@ public class MainMenu : MonoBehaviour
     }
     public void ToOptions()
     {
+        source.PlayOneShot(select, PlayerPrefs.GetFloat("Effects"));
         Main.SetActive(false);
         Options.SetActive(true);
     }
     public void ToMain()
     {
+        source.PlayOneShot(goback, PlayerPrefs.GetFloat("Effects"));
         Main.SetActive(true);
         Options.SetActive(false);
     }
