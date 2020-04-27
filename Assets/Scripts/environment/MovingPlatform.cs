@@ -77,4 +77,33 @@ public class MovingPlatform : MonoBehaviour
     {
         MoveDirection = (currentTarget.transform.position - transf.position).normalized;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerPawn playerPawn = collision.gameObject.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
+        {
+            playerPawn.transform.SetParent(gameObject.transform);
+        }
+
+        BaseStandardEnemy basestandardEnemy = collision.gameObject.GetComponent(typeof(BaseStandardEnemy)) as BaseStandardEnemy;
+        if (basestandardEnemy != null)
+        {
+            basestandardEnemy.Parent.transform.SetParent(gameObject.transform);
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        PlayerPawn playerPawn = collision.gameObject.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
+        {
+            playerPawn.transform.SetParent(null);
+        }
+
+        BaseStandardEnemy basestandardEnemy = collision.gameObject.GetComponent(typeof(BaseStandardEnemy)) as BaseStandardEnemy;
+        if (basestandardEnemy != null)
+        {
+            basestandardEnemy.Parent.transform.SetParent(null);
+        }
+    }
 }
