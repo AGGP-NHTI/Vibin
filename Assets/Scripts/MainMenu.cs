@@ -51,12 +51,25 @@ public class MainMenu : MonoBehaviour
     public void ChangeMusicVolume()
     {
         PlayerPrefs.SetFloat("Music", slider.value);
-        PlayerPrefs.Save();
+        
         audioSource.volume = PlayerPrefs.GetFloat("Music");
+        PlayerPrefs.Save();
     }
     public void ChangeEffectVolume()
     {
         PlayerPrefs.SetFloat("Effects", slider2.value);
+        PlayerPrefs.Save();
+    }
+    public void Defaults()
+    {
+        PlayerPrefs.SetFloat("Music", 0.5f);
+        PlayerPrefs.SetFloat("Effects", 0.5f);
+
+        slider2.value = PlayerPrefs.GetFloat("Effects");
+        slider.value = PlayerPrefs.GetFloat("Music");
+
+        audioSource.volume = PlayerPrefs.GetFloat("Music");
+
         PlayerPrefs.Save();
     }
 }
