@@ -45,7 +45,14 @@ public class BaseStandardEnemy : BaseEnemy
         if (groundcheck.bash)
         {
             attacked = false;
-            currentaction = Default;
+            if (Health <= 0)
+            {
+                currentaction = Die;
+            }
+            else
+            {
+                currentaction = Default;
+            }
         }
     }
     public virtual void Die()
