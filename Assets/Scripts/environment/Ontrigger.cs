@@ -38,6 +38,17 @@ public class Ontrigger : MonoBehaviour
             i.SetActive(false);
         }
     }
+    public void DeActivate()
+    {
+        foreach (GameObject i in TurnOn)
+        {
+            i.SetActive(false);
+        }
+        foreach (GameObject i in TurnOff)
+        {
+            i.SetActive(true);
+        }
+    }
     public void TriggerEntered()
     {
         WhenTriggerEntered.Invoke();
