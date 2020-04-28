@@ -10,6 +10,9 @@ public class EnemyMoveForward : BaseKnight
     {
         slider.maxValue = StartingHealth;
         currentaction = Default;
+        timeleft = attacktime;
+        sword.transform.gameObject.SetActive(false);
+        localScale = transform.localScale;
     }
 
     void FixedUpdate()

@@ -9,7 +9,7 @@ public class BaseKnight : BaseStandardEnemy
     
 
     public float attacktime = 1f;
-    float timeleft;
+    protected float timeleft;
     
 
     void Start()
