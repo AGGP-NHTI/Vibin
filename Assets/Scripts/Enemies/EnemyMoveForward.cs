@@ -14,7 +14,11 @@ public class EnemyMoveForward : BaseKnight
 
     void FixedUpdate()
     {
-        currentaction();      
+        currentaction();
+        if (attacked)
+        {
+            currentaction = Recoil;
+        }
     }
 
     public override void Default()

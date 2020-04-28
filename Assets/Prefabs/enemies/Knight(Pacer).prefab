@@ -600,7 +600,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023233294, y: -0.48580742}
+  m_Offset: {x: -0.006827116, y: -0.24471843}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -611,7 +611,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.77287555, y: 0.05558014}
+  m_Size: {x: 0.49139023, y: 0.057674408}
   m_EdgeRadius: 0
 --- !u!114 &2342727634836934926
 MonoBehaviour:
@@ -690,7 +690,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.9845979, y: 0.22554255}
+  m_Offset: {x: -0.28510153, y: -0.0061977506}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -701,7 +701,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9291733, y: 0.33787727}
+  m_Size: {x: 0.2661748, y: 0.15672863}
   m_EdgeRadius: 0
 --- !u!1 &8802473775235944431
 GameObject:
@@ -734,7 +734,7 @@ Transform:
   m_GameObject: {fileID: 8802473775235944431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.06, y: -1.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5022154, y: 2.5022154, z: 2.5022154}
   m_Children:
   - {fileID: 8802473774502372877}
   - {fileID: 3697565382156971840}
@@ -781,8 +781,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5586740587517799522, guid: ae518e21252a69b4c9a0c9c5b65d9a78,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9011dfcec2862eb49a49d82e3c35eb3c, type: 3}
   m_Color: {r: 0.8490566, g: 0.13216448, b: 0.13216448, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -827,18 +826,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.49594417}
+  m_Offset: {x: -0.0020618439, y: -0.2433787}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.008100569}
+  m_Size: {x: 0.4864416, y: 0.024396777}
   m_EdgeRadius: 0
 --- !u!114 &8802473775235944430
 MonoBehaviour:
@@ -864,8 +863,8 @@ MonoBehaviour:
   direction: 0
   pknockback: 5
   slider: {fileID: 3697565382411633775}
-  Parent: {fileID: 3697565382283973100}
   KBdir: 0
+  Parent: {fileID: 3697565382283973100}
   groundcheck: {fileID: 2342727634836934926}
   deathtime: 2
   rb: {fileID: 8802473775235944426}
@@ -887,18 +886,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00080001354, y: 0.004147887}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.48220944, y: 0.50376487}
   m_EdgeRadius: 0
 --- !u!95 &5333245614231805636
 Animator:

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
-{
-    
+{  
     GameObject currentTarget;
 
     public List<GameObject> PathList;

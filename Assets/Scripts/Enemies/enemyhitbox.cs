@@ -9,10 +9,11 @@ public class enemyhitbox : MonoBehaviour
 
     public bool damaging = false;
     public BaseEnemy baseEnemy;
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
-        if (playerPawn == null)
+        if (playerPawn != null)
         {
             hit = true;
             if (damaging)
@@ -28,7 +29,7 @@ public class enemyhitbox : MonoBehaviour
     void OnTriggerExit2D(Collider2D collider)
     {
         PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
-        if (playerPawn == null)
+        if (playerPawn != null)
         {
             hit = false;
 

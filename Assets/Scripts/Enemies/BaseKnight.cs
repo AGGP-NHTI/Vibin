@@ -6,14 +6,14 @@ public class BaseKnight : BaseStandardEnemy
 {
     public enemyhitbox sight;
     public enemyhitbox sword;
+    
 
     public float attacktime = 1f;
     float timeleft;
     
 
     void Start()
-    {
-        
+    {       
         timeleft = attacktime;
         sword.transform.gameObject.SetActive(false);
     }
@@ -35,6 +35,7 @@ public class BaseKnight : BaseStandardEnemy
         {
             currentaction = Default;
             timeleft = attacktime;
+            sword.transform.gameObject.SetActive(false);
         }
     }
 }
