@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject Menu;
 
     public AudioSource Song;
+    public AudioSource lines;
     public AudioSource pausesong;
    
 
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     public void OnPause()
     {
         Song.Pause();
+        lines.Pause();
         pausesong.Play();
         isPaused = true;
         Menu.SetActive(true);
@@ -46,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnUnpause()
     {
+        lines.UnPause();
         pausesong.Stop();
         Song.UnPause();
         isPaused = false;
@@ -54,6 +57,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Quit()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
