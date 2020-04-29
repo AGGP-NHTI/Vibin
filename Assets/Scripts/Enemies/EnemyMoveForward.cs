@@ -13,6 +13,7 @@ public class EnemyMoveForward : BaseKnight
         timeleft = attacktime;
         sword.transform.gameObject.SetActive(false);
         localScale = transform.localScale;
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -21,6 +22,10 @@ public class EnemyMoveForward : BaseKnight
         if (attacked)
         {
             currentaction = Recoil;
+        }
+        if (sight.hit)
+        {
+            currentaction = Attack;
         }
     }
 
@@ -35,19 +40,19 @@ public class EnemyMoveForward : BaseKnight
         {
             rb.velocity = new Vector3(-1, rb.velocity.y, 0);
         }
-        if (hitbox.hit == true)
+        if (hitbox.bash == true)
         {
             if (direction)
             {
                 direction = false;
                 localScale.x *= -1;
-                hitbox.hit = false;
+                hitbox.bash = false;
             }
             else if (!direction)
             {
                 direction = true;
                 localScale.x *= -1;
-                hitbox.hit = false;
+                hitbox.bash = false;
             }
 
         }

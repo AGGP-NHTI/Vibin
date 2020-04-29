@@ -218,6 +218,7 @@ MonoBehaviour:
   sight: {fileID: 5439928402564310391}
   sword: {fileID: 6841315564356386160}
   attacktime: 1
+  timeleft: 0
   hitbox: {fileID: 5439928402564310391}
 --- !u!95 &3320657945892706323
 Animator:
@@ -436,7 +437,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.35532573, y: -0.014390379}
+  m_Offset: {x: -0.24036378, y: 0.009706937}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -447,7 +448,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29004115, y: 0.29311866}
+  m_Size: {x: 0.11782688, y: 0.15377374}
   m_EdgeRadius: 0
 --- !u!1 &6154965976844135421
 GameObject:
