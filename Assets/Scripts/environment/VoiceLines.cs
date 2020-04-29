@@ -16,6 +16,10 @@ public class VoiceLines : MonoBehaviour
     void Start()
     {
         OnTimeEnd();
+        if (PlayerPrefs.GetFloat("Voices") == 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
   
     void FixedUpdate()
