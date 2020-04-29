@@ -5,23 +5,30 @@ using UnityEngine;
 public class SecurityGuard : BaseStandardEnemy
 {
     public Vision vision;
-    public EnemyProjectile projectile;
+    public taser projectile;
     public GameObject spawnpoint;
     
     public float rechargeTime = 4f;
     float currenttime;
+    public float shoottime = 0.5f;
+    float stime;
+    float taseTime;
+    bool firstframe = true;
     
     void Start()
     {
         slider.maxValue = StartingHealth;
-        currenttime = rechargeTime;
+        currenttime = 0;
         currentaction = Default;
+        stime = shoottime;
+        taseTime = projectile.tazetime;
     }
 
    
     void FixedUpdate()
     {
         currentaction();
+        HitCheck();
     }
     public override void Default()
     {
@@ -30,10 +37,35 @@ public class SecurityGuard : BaseStandardEnemy
         {
             if (vision.sighted)
             {
+                currentaction = shoot;
+                
+            }
+        }
+    }
+    public void shoot()
+    {
+        stime -= Time.fixedDeltaTime;
+        anim.SetBool("AttackingAnim", true);
+        if (stime <= 0)
+        {
+            if (firstframe)
+            {
+                
                 EnemyProjectile clone;
                 clone = Instantiate(projectile, spawnpoint.transform.position, spawnpoint.transform.rotation);
-
-                currenttime = rechargeTime;
+                firstframe = false;
+            }
+            else
+            {
+                taseTime -= Time.fixedDeltaTime;
+                if (taseTime <= 0)
+                {
+                    stime = shoottime;
+                    currenttime = rechargeTime;
+                    currentaction = Default;
+                    firstframe = true;
+                    anim.SetBool("AttackingAnim", false);
+                }
             }
         }
     }

@@ -215,6 +215,7 @@ MonoBehaviour:
   groundcheck: {fileID: 2270862513550885318}
   deathtime: 2
   rb: {fileID: 5439928401284680850}
+  anim: {fileID: 3320657945892706323}
   sight: {fileID: 5439928402564310391}
   sword: {fileID: 6841315564356386160}
   attacktime: 1

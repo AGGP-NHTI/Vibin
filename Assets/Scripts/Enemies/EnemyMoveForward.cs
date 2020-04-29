@@ -27,6 +27,7 @@ public class EnemyMoveForward : BaseKnight
         {
             currentaction = Attack;
         }
+        HitCheck();
     }
 
     public override void Default()

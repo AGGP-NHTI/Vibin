@@ -21,10 +21,12 @@ public class charger : BaseStandardEnemy
         {
             currentaction = charge;
         }
-        
+        HitCheck();
+
     }
     public void charge()
     {
+        anim.SetBool("AttackingAnim", true);
         rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
         if (EnemyHitBox.bash)
         {

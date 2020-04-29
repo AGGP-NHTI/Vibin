@@ -26,6 +26,7 @@ public class Pacer : BaseKnight
         {
             currentaction = Attack;
         }
+        HitCheck();
 
     }
     public override void Default()
@@ -57,9 +58,7 @@ public class Pacer : BaseKnight
         if (Vector3.Distance(gameObject.transform.position, startpos) < (distance / 2))
         {
             passed = true;
-        }
-        
-
+        }       
     }
     public override void Recoil()
     {

@@ -6,7 +6,7 @@ public class BaseKnight : BaseStandardEnemy
 {
     public enemyhitbox sight;
     public enemyhitbox sword;
-    protected Animator anim;
+    
 
     public float attacktime = 1f;
     public float timeleft;

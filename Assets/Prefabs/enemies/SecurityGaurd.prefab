@@ -72,6 +72,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: 0
   bash: 0
+  damaging: 0
+  baseEnemy: {fileID: 0}
 --- !u!1 &7039256551001140347
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +98,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7039256551001140347}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8672261470031476479}
@@ -635,7 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7371927640235399994}
   m_Layer: 0
-  m_Name: enemy 4
+  m_Name: SecurityGaurd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,7 +690,7 @@ Transform:
   m_GameObject: {fileID: 8672261470031476472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 8672261472116465434}
   - {fileID: 7371927639567322413}
@@ -736,8 +738,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5586740587517799522, guid: ae518e21252a69b4c9a0c9c5b65d9a78,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a5ee5f09d2954a4e99f01f7d05cc7b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -786,7 +787,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.828125, y: 0.953125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -812,7 +813,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.828125, y: 0.953125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -842,19 +843,21 @@ MonoBehaviour:
   speed: 2
   attacked: 0
   knockback: 5
-  rb: {fileID: 8672261470031476477}
   direction: 0
   pknockback: 5
   slider: {fileID: 7371927638669087132}
-  Parent: {fileID: 7371927640235399995}
   KBdir: 0
+  Parent: {fileID: 7371927640235399995}
   groundcheck: {fileID: 3597743717250401582}
   deathtime: 2
+  rb: {fileID: 8672261470031476477}
+  anim: {fileID: 8672261470031476355}
   vision: {fileID: 8672261472116465432}
   projectile: {fileID: 5469942167199642589, guid: 32439a955ce21244a9b94350182f39ea,
     type: 3}
   spawnpoint: {fileID: 7039256551001140347}
   rechargeTime: 4
+  shoottime: 1.3
 --- !u!95 &8672261470031476355
 Animator:
   serializedVersion: 3
@@ -865,7 +868,7 @@ Animator:
   m_GameObject: {fileID: 8672261470031476472}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d047cb396018014a80d96042ce0f44c, type: 2}
+  m_Controller: {fileID: 9100000, guid: ec52cb9d36c1d2649a6570b3026ae832, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -919,7 +922,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.9973845, y: 0.22554255}
+  m_Offset: {x: 2.4879606, y: 0.22554255}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -930,7 +933,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9547462, y: 0.33787727}
+  m_Size: {x: 3.3188672, y: 0.33787727}
   m_EdgeRadius: 0
 --- !u!114 &8672261472116465432
 MonoBehaviour:

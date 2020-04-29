@@ -10,10 +10,12 @@ public class BaseStandardEnemy : BaseEnemy
     public enemyhitbox groundcheck;
     public float deathtime = 2f;
     public Rigidbody2D rb;
+    public Animator anim;
 
     bool FF = true;
     
-    void FixedUpdate()
+    
+    public void HitCheck()
     {
         if (attacked)
         {
@@ -41,6 +43,7 @@ public class BaseStandardEnemy : BaseEnemy
                 rb.AddForce(gameObject.transform.right * -knockback);
             }
             attacked = true;
+            anim.SetBool("GettingHitAnim", true);
         }
         if (groundcheck.bash)
         {
@@ -52,15 +55,18 @@ public class BaseStandardEnemy : BaseEnemy
             else
             {
                 currentaction = Default;
+                anim.SetBool("GettingHitAnim", false);
             }
         }
     }
     public virtual void Die()
     {
+        anim.SetBool("DyingAnim", true);
         deathtime -= Time.fixedDeltaTime;
         if (deathtime <= 0)
         {
             Destroy(Parent);
+
         }
     }
 }
