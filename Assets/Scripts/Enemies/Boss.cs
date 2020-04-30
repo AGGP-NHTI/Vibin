@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class Boss : BaseEnemy
 {
+    public Animator anim;
     delegate void currentAction();
     currentAction currentaction;
     currentAction nextaction;
+
     public bool phase2 = false;
 
     public EnemyProjectile fire;
+    public GameObject fireball;
     public float downtime;
     float currenttime;
     public GameObject Mouth;
     
     public BossLocation location;
     public float range;
+    public float volley = 1f;
+    float v;
+    public int volleyAmount = 3;
+    int VA;
     public bool FB = false;
     bool ff = true;
    
@@ -44,6 +51,8 @@ public class Boss : BaseEnemy
         location.movespeed = speed;
         location.WithinRange = range;
         nextaction = Spin;
+        v = volley;
+        VA = volleyAmount;
     }
     
     void FixedUpdate()
@@ -140,7 +149,7 @@ public class Boss : BaseEnemy
             ff = false;
             gameObject.transform.SetParent(SpinPoint.transform);
             spinning = true;
-            nextaction = HFire;
+            nextaction = fball;
             
         }
     
@@ -163,7 +172,36 @@ public class Boss : BaseEnemy
     }
     public void fball()
     {
+        if (!spinning)
+        {
+            location.currentTarget = back;
+        }
+        if (Vector3.Distance(back.transform.position, gameObject.transform.position) <= 1)
+        {
+            spinning = true;
+        }
+        if (spinning)
+        {
+            v -= Time.fixedDeltaTime;
+            if (v <= 0 && VA > 0)
+            {
+                GameObject clone;
+                clone = Instantiate(fireball, Mouth.transform.position, Mouth.transform.rotation);
+                v = volley;
+                VA--;
+            }
+            if (VA <= 0)
+            {
+                spinning = false;
+                v = volley;
+                VA = volleyAmount;
+                nextaction = HFire;
+                currentaction = Idle;
+            }
+        }
+    }
+    public void Die()
+    {
 
     }
-    
 }
