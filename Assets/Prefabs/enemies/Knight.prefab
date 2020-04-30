@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 1585541310342764152}
   - component: {fileID: 2506171985057687843}
   - component: {fileID: 1462213706529812171}
+  - component: {fileID: 4266937733589151091}
   m_Layer: 0
   m_Name: enemy1
   m_TagString: Untagged
@@ -203,7 +204,7 @@ MonoBehaviour:
   IsSpectator: 1
   StartingHealth: 3
   Health: 3
-  damage: 5
+  damage: 1
   speed: 2
   attacked: 0
   knockback: 5
@@ -211,7 +212,7 @@ MonoBehaviour:
   pknockback: 5
   slider: {fileID: 6154965976844135411}
   KBdir: 0
-  Parent: {fileID: 6154965978152199759}
+  Parent: {fileID: 6154965978359062868}
   groundcheck: {fileID: 2270862513550885318}
   deathtime: 2
   rb: {fileID: 5439928401284680850}
@@ -361,7 +362,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -376,6 +377,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
+--- !u!61 &4266937733589151091
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439928401284680855}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.2386437}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4609375, y: 0.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4609375, y: 0.022712573}
   m_EdgeRadius: 0
 --- !u!1 &5439928402564310388
 GameObject:
@@ -782,7 +809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6154965977959429965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.337, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5439928401284680848}

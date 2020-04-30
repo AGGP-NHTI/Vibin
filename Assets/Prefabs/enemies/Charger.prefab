@@ -734,18 +734,19 @@ MonoBehaviour:
   IsSpectator: 1
   StartingHealth: 3
   Health: 3
-  damage: 5
+  damage: 1
   speed: 2
   attacked: 0
   knockback: 5
   direction: 0
   pknockback: 5
   slider: {fileID: 2052405451789311610}
-  Parent: {fileID: 2052405450376256223}
   KBdir: 0
+  Parent: {fileID: 2052405450376256223}
   groundcheck: {fileID: 4230266465654993785}
   deathtime: 2
   rb: {fileID: 7150911591483855783}
+  anim: {fileID: 0}
   vision: {fileID: 77402780901397329}
   EnemyHitBox: {fileID: 7150911593165421122}
 --- !u!50 &7150911591483855783

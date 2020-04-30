@@ -44,7 +44,7 @@ public class BaseStandardEnemy : BaseEnemy
             }
             else
             {
-                rb.AddForce(gameObject.transform.up * -knockback);
+                rb.AddForce(gameObject.transform.up * knockback);
                 rb.AddForce(gameObject.transform.right * -knockback);
             }
             attacked = true;

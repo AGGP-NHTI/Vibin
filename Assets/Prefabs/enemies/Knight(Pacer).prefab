@@ -792,6 +792,7 @@ GameObject:
   - component: {fileID: 8802473775235944430}
   - component: {fileID: 5377293250567295654}
   - component: {fileID: 5333245614231805636}
+  - component: {fileID: 6936595645023717311}
   m_Layer: 0
   m_Name: enemy2
   m_TagString: Untagged
@@ -931,7 +932,7 @@ MonoBehaviour:
   IsSpectator: 1
   StartingHealth: 3
   Health: 3
-  damage: 5
+  damage: 1
   speed: 2
   attacked: 0
   knockback: 5
@@ -943,6 +944,7 @@ MonoBehaviour:
   groundcheck: {fileID: 2342727634836934926}
   deathtime: 2
   rb: {fileID: 8802473775235944426}
+  anim: {fileID: 0}
   sight: {fileID: 8663956503927816719}
   sword: {fileID: 8802473774502372879}
   attacktime: 1
@@ -962,7 +964,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00080001354, y: 0.004147887}
+  m_Offset: {x: -0.00080001354, y: -0.004470639}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -973,7 +975,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48220944, y: 0.50376487}
+  m_Size: {x: 0.48220944, y: 0.4865452}
   m_EdgeRadius: 0
 --- !u!95 &5333245614231805636
 Animator:
@@ -994,3 +996,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &6936595645023717311
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802473775235944431}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.23731577}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.025356531}
+  m_EdgeRadius: 0

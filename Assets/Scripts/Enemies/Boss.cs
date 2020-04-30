@@ -35,7 +35,7 @@ public class Boss : BaseEnemy
 
     public List<GameObject> HfireList;
     public int HFireListIndex = 0;
-
+    public List<jets> Jets;
     GameObject currentTarget;
 
     public GameObject SpinPoint;
@@ -68,9 +68,9 @@ public class Boss : BaseEnemy
             EnemyProjectile clone;
             clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);           
         }
-        if (Health <= (StartingHealth / 3))
+        if (Health <= (StartingHealth / 3) && !phase2)
         {
-            phase2 = true;
+            SecondPhase();
         }
         if (Health <= 0)
         {
@@ -205,6 +205,15 @@ public class Boss : BaseEnemy
                 currentaction = Idle;
             }
         }
+    }
+    public void SecondPhase()
+    {
+        phase2 = true;
+        foreach (jets i in Jets)
+        {
+            i.On = true;
+        }
+        volleyAmount = volleyAmount * 2;
     }
     public void Die()
     {
