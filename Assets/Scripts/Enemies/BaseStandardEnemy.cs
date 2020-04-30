@@ -28,9 +28,9 @@ public class BaseStandardEnemy : BaseEnemy
 
     }
 
-    public override void Damage()
+    public override void Damage(bool KB)
     {
-        base.Damage();
+        base.Damage(KB);
         Recoil();
     }
     public virtual void Recoil()
