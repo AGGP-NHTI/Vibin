@@ -40,5 +40,11 @@ public class BaseEnemy : PWPawn
             }
         }
     }
-    
+    public virtual void Damage()
+    {
+        Health -= 1;
+        attacked = true;
+    }
+
+
 }

@@ -10,12 +10,14 @@ public class Boss : BaseEnemy
     currentAction nextaction;
 
     public bool phase2 = false;
-
+    public GameObject parent;
     public EnemyProjectile fire;
     public GameObject fireball;
+    public float deathtime = 5f;
     public float downtime;
     float currenttime;
     public GameObject Mouth;
+    public GameObject blitzpoint;
     
     public BossLocation location;
     public float range;
@@ -50,7 +52,7 @@ public class Boss : BaseEnemy
         currentaction = Idle;
         location.movespeed = speed;
         location.WithinRange = range;
-        nextaction = Spin;
+        nextaction = fball;
         v = volley;
         VA = volleyAmount;
     }
@@ -178,9 +180,9 @@ public class Boss : BaseEnemy
     {
         if (!spinning)
         {
-            location.currentTarget = back;
+            location.currentTarget = blitzpoint;
         }
-        if (Vector3.Distance(back.transform.position, gameObject.transform.position) <= 1)
+        if (Vector3.Distance(blitzpoint.transform.position, gameObject.transform.position) <= 0.3f)
         {
             spinning = true;
         }
@@ -206,6 +208,10 @@ public class Boss : BaseEnemy
     }
     public void Die()
     {
-
+        deathtime -= Time.fixedDeltaTime;
+        if (deathtime <= 0)
+        {
+            Destroy(parent);
+        }
     }
 }
