@@ -70,6 +70,10 @@ public class Boss : BaseEnemy
         {
             phase2 = true;
         }
+        if (Health <= 0)
+        {
+            currentaction = Die;
+        }
         currentaction();
     }
     public void Idle()

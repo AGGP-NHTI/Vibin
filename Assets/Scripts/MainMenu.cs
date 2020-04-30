@@ -11,8 +11,8 @@ public class MainMenu : MonoBehaviour
     public GameObject Options;
     public AudioClip select;
     public AudioClip goback;
-    
-
+    float mspot;
+    bool off = false;
     public Slider slider;
     public Slider slider2;
     public Slider slider3;
@@ -30,6 +30,10 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    void FixedUpdate()
+    {
+       
     }
 
     public void QuitGame()
@@ -55,6 +59,8 @@ public class MainMenu : MonoBehaviour
     public void ChangeMusicVolume()
     {
         PlayerPrefs.SetFloat("Music", slider.value);
+        
+        
         
         audioSource.volume = PlayerPrefs.GetFloat("Music");
         PlayerPrefs.Save();

@@ -502,7 +502,7 @@ MonoBehaviour:
   slider: {fileID: 1576710940}
   slider2: {fileID: 1506417858}
   slider3: {fileID: 779378295}
-  audioSource: {fileID: 658383052}
+  audioSource: {fileID: 1329274420}
   audioSource2: {fileID: 1786949369}
 --- !u!1 &185119736
 GameObject:
