@@ -28,6 +28,11 @@ public class BaseStandardEnemy : BaseEnemy
 
     }
 
+    public override void Damage()
+    {
+        base.Damage();
+        Recoil();
+    }
     public virtual void Recoil()
     {
         if (FF)

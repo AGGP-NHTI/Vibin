@@ -62,7 +62,7 @@ public class Pacer : BaseKnight
     }
     public override void Recoil()
     {
-        base.Recoil();
+        base.Damage();
         if (groundcheck.bash)
         {
             startpos = gameObject.transform.position;

@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class Boss : BaseEnemy
 {
+    public Animator anim;
     delegate void currentAction();
     currentAction currentaction;
     currentAction nextaction;
-    public bool phase2 = false;
 
+    public bool phase2 = false;
+    public GameObject parent;
     public EnemyProjectile fire;
+    public GameObject fireball;
+    public float deathtime = 5f;
     public float downtime;
     float currenttime;
     public GameObject Mouth;
+    public GameObject blitzpoint;
     
     public BossLocation location;
     public float range;
+    public float volley = 1f;
+    float v;
+    public int volleyAmount = 3;
+    int VA;
     public bool FB = false;
     bool ff = true;
    
@@ -43,7 +52,9 @@ public class Boss : BaseEnemy
         currentaction = Idle;
         location.movespeed = speed;
         location.WithinRange = range;
-        nextaction = Spin;
+        nextaction = fball;
+        v = volley;
+        VA = volleyAmount;
     }
     
     void FixedUpdate()
@@ -60,6 +71,10 @@ public class Boss : BaseEnemy
         if (Health <= (StartingHealth / 3))
         {
             phase2 = true;
+        }
+        if (Health <= 0)
+        {
+            currentaction = Die;
         }
         currentaction();
     }
@@ -140,7 +155,7 @@ public class Boss : BaseEnemy
             ff = false;
             gameObject.transform.SetParent(SpinPoint.transform);
             spinning = true;
-            nextaction = HFire;
+            nextaction = fball;
             
         }
     
@@ -163,7 +178,40 @@ public class Boss : BaseEnemy
     }
     public void fball()
     {
-
+        if (!spinning)
+        {
+            location.currentTarget = blitzpoint;
+        }
+        if (Vector3.Distance(blitzpoint.transform.position, gameObject.transform.position) <= 0.3f)
+        {
+            spinning = true;
+        }
+        if (spinning)
+        {
+            v -= Time.fixedDeltaTime;
+            if (v <= 0 && VA > 0)
+            {
+                GameObject clone;
+                clone = Instantiate(fireball, Mouth.transform.position, Mouth.transform.rotation);
+                v = volley;
+                VA--;
+            }
+            if (VA <= 0)
+            {
+                spinning = false;
+                v = volley;
+                VA = volleyAmount;
+                nextaction = HFire;
+                currentaction = Idle;
+            }
+        }
     }
-    
+    public void Die()
+    {
+        deathtime -= Time.fixedDeltaTime;
+        if (deathtime <= 0)
+        {
+            Destroy(parent);
+        }
+    }
 }
