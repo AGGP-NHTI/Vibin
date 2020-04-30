@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  speed: 7
+  speed: 2
   LT: 5
   penetrate: 0
 --- !u!61 &678153740837868640
