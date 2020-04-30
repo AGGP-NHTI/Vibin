@@ -25,12 +25,28 @@ public class WalkState : State
     {
         if(value)
         {
-            if (_pawn.rb.velocity.x < -0.1)
+
+            if (_pawn.rb.velocity.x < -0.5)
             {
+                _pawn.Anim.SetBool("PlayerAttacked", value);
+                _pawn.AttackLeft.gameObject.SetActive(true);
+                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                yield return new WaitForSeconds(0.2f);
+                _pawn.AttackLeft.gameObject.SetActive(false);
+                _pawn.Anim.SetBool("PlayerAttacked", false);
+                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
 
             }
             else
             {
+                _pawn.Anim.SetBool("PlayerAttacked", value);
+                _pawn.AttackRight.gameObject.SetActive(true);
+                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                yield return new WaitForSeconds(0.2f);
+                _pawn.AttackRight.gameObject.SetActive(false);
+                _pawn.Anim.SetBool("PlayerAttacked", false);
+                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             }
         }

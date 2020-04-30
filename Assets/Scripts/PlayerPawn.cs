@@ -22,6 +22,8 @@ public class PlayerPawn : PWPawn
     public float jumpSpeed;
     public float gravity;
 
+    public float health = 3;
+
     public void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -34,7 +36,6 @@ public class PlayerPawn : PWPawn
         StartCoroutine(_currentState.Update());
         Anim.SetFloat("PlayerJumpVelocity", rb.velocity.y);
         Anim.SetFloat("Horizontal", rb.velocity.x);
-
         Gravity();
     }
 

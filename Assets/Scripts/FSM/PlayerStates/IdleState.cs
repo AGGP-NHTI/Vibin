@@ -20,6 +20,37 @@ public class IdleState : State
         }
         yield break;
     }
+    public override IEnumerator LightAttack(bool value)
+    {
+        if (value)
+        {
+
+            if (_pawn.Anim.GetCurrentAnimatorStateInfo(0).IsName("IdleLeftAnimation"))
+            {
+                _pawn.Anim.SetBool("PlayerAttacked", value);
+                _pawn.AttackLeft.gameObject.SetActive(true);
+                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                yield return new WaitForSeconds(0.2f);
+                _pawn.AttackLeft.gameObject.SetActive(false);
+                _pawn.Anim.SetBool("PlayerAttacked", false);
+                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
+            }
+            else
+            {
+                _pawn.Anim.SetBool("PlayerAttacked", value);
+                _pawn.AttackRight.gameObject.SetActive(true);
+                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                yield return new WaitForSeconds(0.2f);
+                _pawn.AttackRight.gameObject.SetActive(false);
+                _pawn.Anim.SetBool("PlayerAttacked", false);
+                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            }
+        }
+        yield break;
+    }
     public override IEnumerator Walk(float value)
     {
         if(value > 0 || value < 0)
