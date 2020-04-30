@@ -6,20 +6,20 @@ public class BaseKnight : BaseStandardEnemy
 {
     public enemyhitbox sight;
     public enemyhitbox sword;
+    
 
     public float attacktime = 1f;
-    float timeleft;
+    public float timeleft;
     
 
     void Start()
-    {
-        
+    {       
         timeleft = attacktime;
         sword.transform.gameObject.SetActive(false);
     }
     void FixedUpdate()
     {
-        if (sight.bash)
+        if (sight.hit)
         {
             currentaction = Attack;
         }
@@ -30,11 +30,14 @@ public class BaseKnight : BaseStandardEnemy
         if (timeleft >= 0)
         {
             sword.transform.gameObject.SetActive(true);
+            anim.SetBool("AttackingAnim", true);
         }
         else
         {
             currentaction = Default;
             timeleft = attacktime;
+            sword.transform.gameObject.SetActive(false);
+            anim.SetBool("AttackingAnim", false);
         }
     }
 }

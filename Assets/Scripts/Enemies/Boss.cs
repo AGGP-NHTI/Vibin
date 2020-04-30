@@ -7,7 +7,7 @@ public class Boss : BaseEnemy
     delegate void currentAction();
     currentAction currentaction;
     currentAction nextaction;
-    
+    public bool phase2 = false;
 
     public EnemyProjectile fire;
     public float downtime;
@@ -55,8 +55,11 @@ public class Boss : BaseEnemy
         if (FB)
         {
             EnemyProjectile clone;
-            clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);
-            
+            clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);           
+        }
+        if (Health <= (StartingHealth / 3))
+        {
+            phase2 = true;
         }
         currentaction();
     }
@@ -157,6 +160,10 @@ public class Boss : BaseEnemy
             ff = true;
         }
         
+    }
+    public void fball()
+    {
+
     }
     
 }

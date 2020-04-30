@@ -14,6 +14,7 @@ public class Pacer : BaseKnight
         startpos = gameObject.transform.position;
         localScale = transform.localScale;
         currentaction = Default;
+        anim = GetComponent<Animator>();
     }
 
     
@@ -21,7 +22,12 @@ public class Pacer : BaseKnight
     {
         transform.localScale = localScale;
         currentaction();
-        
+        if (sight.hit)
+        {
+            currentaction = Attack;
+        }
+        HitCheck();
+
     }
     public override void Default()
     {
@@ -52,9 +58,7 @@ public class Pacer : BaseKnight
         if (Vector3.Distance(gameObject.transform.position, startpos) < (distance / 2))
         {
             passed = true;
-        }
-        
-
+        }       
     }
     public override void Recoil()
     {

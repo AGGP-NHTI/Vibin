@@ -4,23 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class MainMenu : MonoBehaviour
 {
     public GameObject Main;
     public GameObject Options;
     public AudioClip select;
     public AudioClip goback;
-    public AudioSource source;
+    
 
     public Slider slider;
     public Slider slider2;
+    public Slider slider3;
 
     public AudioSource audioSource;
+    public AudioSource audioSource2;
 
     void Start()
     {
         slider2.value = PlayerPrefs.GetFloat("Effects", 0.5f);
         slider.value = PlayerPrefs.GetFloat("Music", 0.5f);
+        slider3.value = PlayerPrefs.GetFloat("Voices", 0.5f);
     }
    
     public void PlayGame()
@@ -38,13 +42,13 @@ public class MainMenu : MonoBehaviour
     }
     public void ToOptions()
     {
-        source.PlayOneShot(select, PlayerPrefs.GetFloat("Effects"));
+        audioSource2.PlayOneShot(select, PlayerPrefs.GetFloat("Effects"));
         Main.SetActive(false);
         Options.SetActive(true);
     }
     public void ToMain()
     {
-        source.PlayOneShot(goback, PlayerPrefs.GetFloat("Effects"));
+        audioSource2.PlayOneShot(goback, PlayerPrefs.GetFloat("Effects"));
         Main.SetActive(true);
         Options.SetActive(false);
     }
@@ -58,18 +62,28 @@ public class MainMenu : MonoBehaviour
     public void ChangeEffectVolume()
     {
         PlayerPrefs.SetFloat("Effects", slider2.value);
+        audioSource2.volume = PlayerPrefs.GetFloat("Effects");
+        PlayerPrefs.Save();
+    }
+    public void ChangeVoiceVolume()
+    {
+        PlayerPrefs.SetFloat("Voices", slider3.value);
         PlayerPrefs.Save();
     }
     public void Defaults()
     {
         PlayerPrefs.SetFloat("Music", 0.5f);
         PlayerPrefs.SetFloat("Effects", 0.5f);
+        PlayerPrefs.SetFloat("Voices", 0.5f);
 
         slider2.value = PlayerPrefs.GetFloat("Effects");
         slider.value = PlayerPrefs.GetFloat("Music");
+        slider3.value = PlayerPrefs.GetFloat("Voices");
 
         audioSource.volume = PlayerPrefs.GetFloat("Music");
+        audioSource2.volume = PlayerPrefs.GetFloat("Effects");
 
         PlayerPrefs.Save();
     }
+    
 }

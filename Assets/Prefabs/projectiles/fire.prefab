@@ -100,7 +100,7 @@ MonoBehaviour:
   damage: 0
   speed: 0
   LT: 5
-  penetrate: 0
+  penetrate: 1
 --- !u!114 &5625216965190364087
 MonoBehaviour:
   m_ObjectHideFlags: 0
