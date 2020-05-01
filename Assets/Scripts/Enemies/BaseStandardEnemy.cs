@@ -28,9 +28,9 @@ public class BaseStandardEnemy : BaseEnemy
 
     }
 
-    public override void Damage()
+    public override void Damage(bool KB)
     {
-        base.Damage();
+        base.Damage(KB);
         Recoil();
     }
     public virtual void Recoil()
@@ -44,7 +44,7 @@ public class BaseStandardEnemy : BaseEnemy
             }
             else
             {
-                rb.AddForce(gameObject.transform.up * -knockback);
+                rb.AddForce(gameObject.transform.up * knockback);
                 rb.AddForce(gameObject.transform.right * -knockback);
             }
             attacked = true;

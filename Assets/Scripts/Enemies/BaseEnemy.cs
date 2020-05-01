@@ -36,7 +36,7 @@ public class BaseEnemy : PWPawn
             if (playerPawn != null)
             {
                 playerPawn.TakeDamage(null, damage, null, null);
-                //playerPawn.rb.Addforce(gameObject.transform.forward * pknockback);
+                
             }
         }
     }
