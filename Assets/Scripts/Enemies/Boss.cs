@@ -31,6 +31,7 @@ public class Boss : BaseEnemy
    
     public AudioSource source;
     public AudioClip fbs;
+    public AudioClip roar;
 
     public List<GameObject> IdleList;
     public int IdleListIndex = 0;
@@ -333,7 +334,7 @@ public class Boss : BaseEnemy
         }
         volleyAmount = volleyAmount * 2;
         spincycle = true;
-        
+        source.PlayOneShot(roar, PlayerPrefs.GetFloat("Effects", 0.5f));
     }
     public override void Damage(bool KB)
     {
