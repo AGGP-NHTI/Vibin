@@ -60,7 +60,7 @@ public class Boss : BaseEnemy
     {
         slider.maxValue = StartingHealth;
         currenttime = downtime;
-        currentaction = Idle;
+        currentaction = Begin;
         location.movespeed = speed;
         location.WithinRange = range;
         nextaction = HFire;
@@ -68,7 +68,13 @@ public class Boss : BaseEnemy
         VA = volleyAmount;
         localScale = transform.localScale;
     }
-    
+    void Update()
+    {
+        if (currentaction != Begin)
+        {
+            slider.value = Health;
+        }
+    }
     void FixedUpdate()
     {
         if (!spinning)
@@ -95,6 +101,17 @@ public class Boss : BaseEnemy
         }
         transform.localScale = localScale;
         currentaction();
+    }
+    public void Begin()
+    {
+        slider.value += 10f * Time.fixedDeltaTime;
+
+        location.currentTarget = IdleList[IdleListIndex];
+
+        if (location.IsCloseToTarget())
+        {
+            currentaction = Idle;
+        }
     }
     public void Idle()
     {
