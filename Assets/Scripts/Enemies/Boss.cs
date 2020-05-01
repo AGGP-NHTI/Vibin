@@ -27,6 +27,8 @@ public class Boss : BaseEnemy
     public int volleyAmount = 3;
     int VA;
     public bool FB = false;
+    public float firefrequency = 0.1f;
+    float fre;
     bool ff = true;
    
     public AudioSource source;
@@ -58,6 +60,7 @@ public class Boss : BaseEnemy
     
     void Start()
     {
+        fre = firefrequency;
         slider.maxValue = StartingHealth;
         currenttime = downtime;
         currentaction = Begin;
@@ -85,9 +88,14 @@ public class Boss : BaseEnemy
         }
         if (FB)
         {
-            EnemyProjectile clone;
-            clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);
             anim.SetBool("FBAnim", true);
+            fre -= Time.fixedDeltaTime;
+            if (fre <= 0)
+            {
+                EnemyProjectile clone;
+                clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);
+                fre = firefrequency;
+            }
         }
         else
         {
