@@ -37,6 +37,10 @@ public class Boss : BaseEnemy
 
     public List<GameObject> HfireList;
     public int HFireListIndex = 0;
+
+    public List<GameObject> HfireList2;
+    public int HFireListIndex2 = 0;
+
     public List<jets> Jets;
     
     GameObject currentTarget;
@@ -119,7 +123,7 @@ public class Boss : BaseEnemy
     {
         bool finished = false;
         
-            location.currentTarget = HfireList[HFireListIndex];
+        location.currentTarget = HfireList[HFireListIndex];
         if (location.IsCloseToTarget())
         {
             if (HFireListIndex <= HfireList.Capacity - 2)
@@ -144,10 +148,60 @@ public class Boss : BaseEnemy
         }
         if (finished)
         {
-           
-            finished = false;
-            currentaction = Idle;
-            nextaction = Spin;
+            if (phase2)
+            {
+                currentaction = HFire2;
+                finished = false;
+                FB = false;
+            }
+            else
+            {
+                finished = false;
+                currentaction = Idle;
+                nextaction = Spin;
+            }
+        }
+    }
+    public void HFire2()
+    {
+        bool finished = false;
+
+        location.currentTarget = HfireList2[HFireListIndex2];
+        gameObject.transform.rotation = back.transform.rotation;
+        if (location.IsCloseToTarget())
+        {
+            if (HFireListIndex2 <= HfireList2.Capacity - 2)
+            {
+                HFireListIndex2++;
+                
+                if (HFireListIndex2 == 1 || HFireListIndex2 == 3)
+                {
+                    FB = true;
+                    source.UnPause();
+                    localScale.y *= -1;
+                }
+                else
+                {
+                    FB = false;
+                    source.Pause();
+                   
+                }
+            }
+            else
+            {
+                finished = true;
+                HFireListIndex2 = 0;
+            }
+        }
+        if (finished)
+        {           
+            {
+                finished = false;
+                currentaction = Idle;
+                nextaction = Spin;
+                gameObject.transform.rotation = Quaternion.identity;
+                
+            }
         }
     }
     public void Spin()
@@ -169,7 +223,7 @@ public class Boss : BaseEnemy
             ff = false;
             gameObject.transform.SetParent(SpinPoint.transform);
             spinning = true;
-            nextaction = fball;
+            nextaction = fballStart;
             
         }
     
@@ -224,6 +278,11 @@ public class Boss : BaseEnemy
             localScale.y *= -1;
         }
     }
+    public void fballStart()
+    {
+        VA = volleyAmount;
+        currentaction = fball;
+    }
     public void fball()
     {
         if (!spinning)
@@ -274,6 +333,7 @@ public class Boss : BaseEnemy
         }
         volleyAmount = volleyAmount * 2;
         spincycle = true;
+        
     }
     public override void Damage(bool KB)
     {
