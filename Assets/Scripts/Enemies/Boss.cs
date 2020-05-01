@@ -104,7 +104,7 @@ public class Boss : BaseEnemy
     }
     public void Begin()
     {
-        slider.value += 10f * Time.fixedDeltaTime;
+        slider.value += 6f * Time.fixedDeltaTime;
 
         location.currentTarget = IdleList[IdleListIndex];
 
