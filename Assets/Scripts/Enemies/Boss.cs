@@ -67,6 +67,7 @@ public class Boss : BaseEnemy
         v = volley;
         VA = volleyAmount;
         localScale = transform.localScale;
+        source.volume = PlayerPrefs.GetFloat("Effects");
     }
     void Update()
     {
@@ -104,7 +105,7 @@ public class Boss : BaseEnemy
     }
     public void Begin()
     {
-        slider.value += 10f * Time.fixedDeltaTime;
+        slider.value += 6f * Time.fixedDeltaTime;
 
         location.currentTarget = IdleList[IdleListIndex];
 
