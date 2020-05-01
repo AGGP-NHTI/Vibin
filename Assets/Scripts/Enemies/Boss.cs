@@ -13,6 +13,7 @@ public class Boss : BaseEnemy
     public GameObject parent;
     public EnemyProjectile fire;
     public GameObject fireball;
+    public GameObject fireball2;
     public float deathtime = 5f;
     public float downtime;
     float currenttime;
@@ -29,6 +30,7 @@ public class Boss : BaseEnemy
     bool ff = true;
    
     public AudioSource source;
+    public AudioClip fbs;
 
     public List<GameObject> IdleList;
     public int IdleListIndex = 0;
@@ -36,14 +38,18 @@ public class Boss : BaseEnemy
     public List<GameObject> HfireList;
     public int HFireListIndex = 0;
     public List<jets> Jets;
+    
     GameObject currentTarget;
 
     public GameObject SpinPoint;
+    public GameObject SpinPoint2;
     public GameObject back;
    
     public int index = 0;
     bool spinning = false;
     bool passed = false;
+
+    bool spincycle = false;
     
     void Start()
     {
@@ -52,9 +58,10 @@ public class Boss : BaseEnemy
         currentaction = Idle;
         location.movespeed = speed;
         location.WithinRange = range;
-        nextaction = fball;
+        nextaction = HFire;
         v = volley;
         VA = volleyAmount;
+        localScale = transform.localScale;
     }
     
     void FixedUpdate()
@@ -66,7 +73,12 @@ public class Boss : BaseEnemy
         if (FB)
         {
             EnemyProjectile clone;
-            clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);           
+            clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);
+            anim.SetBool("FBAnim", true);
+        }
+        else
+        {
+            anim.SetBool("FBAnim", false);
         }
         if (Health <= (StartingHealth / 3) && !phase2)
         {
@@ -76,6 +88,7 @@ public class Boss : BaseEnemy
         {
             currentaction = Die;
         }
+        transform.localScale = localScale;
         currentaction();
     }
     public void Idle()
@@ -106,7 +119,7 @@ public class Boss : BaseEnemy
     {
         bool finished = false;
         
-        location.currentTarget = HfireList[HFireListIndex];
+            location.currentTarget = HfireList[HFireListIndex];
         if (location.IsCloseToTarget())
         {
             if (HFireListIndex <= HfireList.Capacity - 2)
@@ -131,6 +144,7 @@ public class Boss : BaseEnemy
         }
         if (finished)
         {
+           
             finished = false;
             currentaction = Idle;
             nextaction = Spin;
@@ -165,16 +179,50 @@ public class Boss : BaseEnemy
         }
         if (passed && Vector3.Distance(back.transform.position, gameObject.transform.position) <= 1)
         {
-            gameObject.transform.SetParent(null);
-            gameObject.transform.rotation = Quaternion.identity;
-            spinning = false;
-            currentaction = Idle;
-            passed = false;
-            FB = false;
-            source.Stop();
-            ff = true;
+            if (!spincycle)
+            {
+                gameObject.transform.SetParent(null);
+                gameObject.transform.rotation = Quaternion.identity;
+                spinning = false;
+                currentaction = Idle;
+                passed = false;
+                FB = false;
+                source.Stop();
+                ff = true;
+                if (phase2)
+                {
+                    spincycle = true;
+                }
+            }
+            else
+            {
+                currentaction = Spin3;
+                ff = true;
+                passed = false;
+            }
         }
         
+    }
+    public void Spin3()
+    {
+        if (ff)
+        {
+            gameObject.transform.SetParent(SpinPoint2.transform);
+            localScale.y *= -1;
+            ff = false;
+        }
+        if (gameObject.transform.position.x <= SpinPoint.transform.position.x)
+        {
+            passed = true;
+        }
+        if (passed && Vector3.Distance(back.transform.position, gameObject.transform.position) <= 1)
+        {
+            currentaction = Spin2;
+            spincycle = false;
+            passed = false;
+            gameObject.transform.SetParent(SpinPoint.transform);
+            localScale.y *= -1;
+        }
     }
     public void fball()
     {
@@ -191,10 +239,21 @@ public class Boss : BaseEnemy
             v -= Time.fixedDeltaTime;
             if (v <= 0 && VA > 0)
             {
-                GameObject clone;
-                clone = Instantiate(fireball, Mouth.transform.position, Mouth.transform.rotation);
-                v = volley;
-                VA--;
+                source.PlayOneShot(fbs, PlayerPrefs.GetFloat("Effects"));
+                if (VA % 2 == 0)
+                {
+                    GameObject clone;
+                    clone = Instantiate(fireball, Mouth.transform.position, Mouth.transform.rotation);
+                    v = volley;
+                    VA--;
+                }
+                else
+                {
+                    GameObject clone;
+                    clone = Instantiate(fireball2, Mouth.transform.position, Mouth.transform.rotation);
+                    v = volley;
+                    VA--;
+                }
             }
             if (VA <= 0)
             {
@@ -214,6 +273,18 @@ public class Boss : BaseEnemy
             i.On = true;
         }
         volleyAmount = volleyAmount * 2;
+        spincycle = true;
+    }
+    public override void Damage(bool KB)
+    {
+        base.Damage(KB);
+        attacked = false;
+        if (Health <= 0)
+        {
+            currentaction = Die;
+            anim.SetBool("DyingAnim", true);
+            FB = false;
+        }
     }
     public void Die()
     {

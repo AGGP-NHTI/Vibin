@@ -26,6 +26,22 @@ public class Pacer : BaseKnight
         {
             currentaction = Attack;
         }
+        if (sight.bash)
+        {
+            localScale.x *= -1;
+            if (direction)
+            {
+                direction = false;
+                passed = false;
+                sight.bash = false;
+            }
+            else if (!direction)
+            {
+                direction = true;
+                passed = false;
+                sight.bash = false;
+            }
+        }
         HitCheck();
 
     }
