@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject Main;
     public GameObject Options;
+    public GameObject Credits;
     public AudioClip select;
     public AudioClip goback;
     
@@ -18,6 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioSource audioSource2;
+    public AudioSource audioSource3;
 
     void Start()
     {
@@ -46,14 +48,25 @@ public class MainMenu : MonoBehaviour
     public void ToOptions()
     {
         audioSource2.PlayOneShot(select, PlayerPrefs.GetFloat("Effects"));
+        audioSource2.Play();
         Main.SetActive(false);
         Options.SetActive(true);
+        audioSource3.Play();
+    }
+    public void ToCredits()
+    {
+        audioSource2.PlayOneShot(select, PlayerPrefs.GetFloat("Effects"));
+        Main.SetActive(false);
+        Credits.SetActive(true);
     }
     public void ToMain()
     {
+        audioSource2.Stop();
         audioSource2.PlayOneShot(goback, PlayerPrefs.GetFloat("Effects"));
+        audioSource3.Stop();
         Main.SetActive(true);
         Options.SetActive(false);
+        Credits.SetActive(false);
     }
     public void ChangeMusicVolume()
     {
@@ -71,6 +84,7 @@ public class MainMenu : MonoBehaviour
     public void ChangeVoiceVolume()
     {
         PlayerPrefs.SetFloat("Voices", slider3.value);
+        audioSource3.volume = PlayerPrefs.GetFloat("Voices");
         PlayerPrefs.Save();
     }
     public void Defaults()
