@@ -67,6 +67,8 @@ public class Boss : BaseEnemy
         v = volley;
         VA = volleyAmount;
         localScale = transform.localScale;
+        slider.value = 1;
+        source.volume = PlayerPrefs.GetFloat("Effects");
     }
     void Update()
     {
