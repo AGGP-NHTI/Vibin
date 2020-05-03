@@ -195,7 +195,7 @@ public class Boss : BaseEnemy
         bool finished = false;
 
         location.currentTarget = HfireList2[HFireListIndex2];
-        gameObject.transform.rotation = back.transform.rotation;
+        
         if (location.IsCloseToTarget())
         {
             if (HFireListIndex2 <= HfireList2.Capacity - 2)
@@ -213,6 +213,10 @@ public class Boss : BaseEnemy
                     FB = false;
                     source.Pause();
                    
+                }
+                if (HFireListIndex2 == 1)
+                {
+                    gameObject.transform.rotation = back.transform.rotation;
                 }
             }
             else

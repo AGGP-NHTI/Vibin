@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   speed: 10
-  LT: 0.7
+  LT: 2
   penetrate: 1
 --- !u!61 &2821367125353063671
 BoxCollider2D:
