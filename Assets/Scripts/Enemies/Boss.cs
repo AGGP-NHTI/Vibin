@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : BaseEnemy
 {
+    public bool testdamage = false;
     public Animator anim;
+    Color flash;
+    public Image slide;
+    public float flashtime = 0.5f;
+    float currentflashtime;
+    Color norm;
     delegate void currentAction();
     currentAction currentaction;
     currentAction nextaction;
@@ -59,6 +66,7 @@ public class Boss : BaseEnemy
     bool passed = false;
 
     bool spincycle = false;
+    bool flashed = false;
     
     void Start()
     {
@@ -75,7 +83,9 @@ public class Boss : BaseEnemy
         slider.value = 0;
         source.volume = PlayerPrefs.GetFloat("Effects");
         source.Play();
-        
+        norm = slide.color;
+        flash = Color.red;
+        currentflashtime = flashtime;
     }
     void Update()
     {
@@ -86,6 +96,10 @@ public class Boss : BaseEnemy
     }
     void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.H) && testdamage)
+        {
+            Damage(true);
+        }
         if (!spinning)
         {
             gameObject.transform.position = location.transform.position;
@@ -120,6 +134,16 @@ public class Boss : BaseEnemy
         {
             currentaction = Die;
         }
+        if (flashed)
+        {
+            currentflashtime -= Time.fixedDeltaTime;
+            if (currentflashtime <= 0)
+            {
+                flashed = false;
+                slide.color = norm;
+                currentflashtime = flashtime;
+            }
+        }
         transform.localScale = localScale;
         currentaction();
     }
@@ -127,7 +151,7 @@ public class Boss : BaseEnemy
     {
         slider.value += 5f * Time.fixedDeltaTime;
 
-        location.currentTarget = IdleList[IdleListIndex];
+        location.currentTarget = IdleList[1];
 
         source.Pause();
 
@@ -384,6 +408,8 @@ public class Boss : BaseEnemy
     {
         base.Damage(KB);
         attacked = false;
+        flashed = true;
+        slide.color = flash;
         if (Health <= 0)
         {
             currentaction = Die;

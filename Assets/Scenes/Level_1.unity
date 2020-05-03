@@ -22302,9 +22302,12 @@ MonoBehaviour:
   pknockback: 5
   slider: {fileID: 6471194921237201426}
   KBdir: 0
+  testdamage: 0
   anim: {fileID: 6471194921217420123}
+  slide: {fileID: 6471194921882939843}
+  flashtime: 0.1
   phase2: 0
-  parent: {fileID: 0}
+  parent: {fileID: 6471194920419641957}
   fire: {fileID: 5625216965190364086, guid: cbe63f7d4ce21fc4e982bf8bb52a5b8b, type: 3}
   fireball: {fileID: 4066517169931284959, guid: dcccc8618b48ce94f89a1fe9bf5f5871,
     type: 3}
@@ -22509,11 +22512,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -22556,9 +22559,9 @@ RectTransform:
   m_Father: {fileID: 290301211}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.0555973, y: 357}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 4.0555973, y: -95}
   m_SizeDelta: {x: 35.98, y: 4.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6471194921237201437

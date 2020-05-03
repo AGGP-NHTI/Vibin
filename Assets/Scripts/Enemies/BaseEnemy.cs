@@ -43,7 +43,7 @@ public class BaseEnemy : PWPawn
     public virtual void Damage(bool KB)
     {
         KBdir = KB;
-        Health -= 1;
+        Health--;
         attacked = true;
     }
 
