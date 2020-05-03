@@ -30,8 +30,10 @@ public class Boss : BaseEnemy
     public float firefrequency = 0.1f;
     float fre;
     bool ff = true;
+    bool ffp = true;
    
     public AudioSource source;
+    public AudioSource secondary;
     public AudioClip fbs;
     public AudioClip roar;
 
@@ -73,7 +75,7 @@ public class Boss : BaseEnemy
         slider.value = 0;
         source.volume = PlayerPrefs.GetFloat("Effects");
         source.Play();
-        source.Pause();
+        
     }
     void Update()
     {
@@ -98,12 +100,17 @@ public class Boss : BaseEnemy
                 clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);
                 fre = firefrequency;
                 source.UnPause();
+                ffp = true;
             }
         }
         else
         {
-            anim.SetBool("FBAnim", false);
-            source.Pause();
+            if (ffp)
+            {
+                anim.SetBool("FBAnim", false);
+                source.Pause();
+                ffp = false;
+            }
         }
         if (Health <= (StartingHealth / 3) && !phase2)
         {
@@ -121,6 +128,8 @@ public class Boss : BaseEnemy
         slider.value += 5f * Time.fixedDeltaTime;
 
         location.currentTarget = IdleList[IdleListIndex];
+
+        source.Pause();
 
         if (location.IsCloseToTarget())
         {
@@ -369,7 +378,7 @@ public class Boss : BaseEnemy
         }
         volleyAmount = volleyAmount * 2;
         spincycle = true;
-        source.PlayOneShot(roar, PlayerPrefs.GetFloat("Effects", 0.5f));
+        secondary.PlayOneShot(roar, PlayerPrefs.GetFloat("Effects", 0.5f));
     }
     public override void Damage(bool KB)
     {
@@ -387,6 +396,7 @@ public class Boss : BaseEnemy
         deathtime -= Time.fixedDeltaTime;
         if (deathtime <= 0)
         {
+            slider.gameObject.SetActive(false);
             Destroy(parent);
         }
     }

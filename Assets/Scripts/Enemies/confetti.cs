@@ -15,7 +15,7 @@ public class confetti : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         time -= Time.fixedDeltaTime;
         if (time <= 0.2)
