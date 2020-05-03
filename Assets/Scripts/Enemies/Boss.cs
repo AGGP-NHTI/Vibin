@@ -367,7 +367,7 @@ public class Boss : BaseEnemy
             v -= Time.fixedDeltaTime;
             if (v <= 0 && VA > 0)
             {
-                source.PlayOneShot(fbs, PlayerPrefs.GetFloat("Effects"));
+                secondary.PlayOneShot(fbs, PlayerPrefs.GetFloat("Effects"));
                 if (VA % 2 == 0)
                 {
                     GameObject clone;
