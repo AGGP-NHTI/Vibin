@@ -72,6 +72,8 @@ public class Boss : BaseEnemy
         localScale = transform.localScale;
         slider.value = 0;
         source.volume = PlayerPrefs.GetFloat("Effects");
+        source.Play();
+        source.Pause();
     }
     void Update()
     {
@@ -95,11 +97,13 @@ public class Boss : BaseEnemy
                 EnemyProjectile clone;
                 clone = Instantiate(fire, Mouth.transform.position, Mouth.transform.rotation);
                 fre = firefrequency;
+                source.UnPause();
             }
         }
         else
         {
             anim.SetBool("FBAnim", false);
+            source.Pause();
         }
         if (Health <= (StartingHealth / 3) && !phase2)
         {
@@ -160,12 +164,12 @@ public class Boss : BaseEnemy
                 if (HFireListIndex == 1 || HFireListIndex == 3)
                 {
                     FB = true;
-                    source.UnPause();
+                    
                 }
                 else
                 {
                     FB = false;
-                    source.Pause();
+                    
                 }
             }
             else
@@ -251,7 +255,7 @@ public class Boss : BaseEnemy
         if (ff)
         {
             FB = true;
-            source.Play();
+            
             ff = false;
             gameObject.transform.SetParent(SpinPoint.transform);
             spinning = true;
@@ -273,7 +277,7 @@ public class Boss : BaseEnemy
                 currentaction = Idle;
                 passed = false;
                 FB = false;
-                source.Stop();
+                
                 ff = true;
                 if (phase2)
                 {

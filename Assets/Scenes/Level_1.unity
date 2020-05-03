@@ -1545,6 +1545,7 @@ MonoBehaviour:
   lines: {fileID: 1972959208}
   pausesong: {fileID: 1421742708}
   boss: {fileID: 1774003922}
+  bosssounds: {fileID: 6471194920419642008}
   isPaused: 0
 --- !u!1001 &515234593
 PrefabInstance:
