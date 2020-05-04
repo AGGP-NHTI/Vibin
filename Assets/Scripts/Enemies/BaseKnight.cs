@@ -8,7 +8,7 @@ public class BaseKnight : BaseStandardEnemy
     public enemyhitbox sword;
     
 
-    public float attacktime = 1f;
+    public float attacktime = 0.2f;
     public float timeleft;
     public float wait = 1f;
     float WT;
@@ -31,7 +31,7 @@ public class BaseKnight : BaseStandardEnemy
         WT -= Time.fixedDeltaTime;
         if (WT <= 0)
         {
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
             timeleft -= Time.fixedDeltaTime;
             if (timeleft >= 0)
             {
@@ -45,6 +45,9 @@ public class BaseKnight : BaseStandardEnemy
                 sword.transform.gameObject.SetActive(false);
                 anim.SetBool("AttackingAnim", false);
                 WT = wait;
+                rb.constraints = RigidbodyConstraints2D.None;
+                
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
         }
     }

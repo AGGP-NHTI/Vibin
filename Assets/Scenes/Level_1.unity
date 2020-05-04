@@ -247,6 +247,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.77
       objectReference: {fileID: 0}
+    - target: {fileID: 8802473775235944427, guid: 5b243f1a3258f4f46977c09f5a525d62,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802473775235944430, guid: 5b243f1a3258f4f46977c09f5a525d62,
+        type: 3}
+      propertyPath: attacktime
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b243f1a3258f4f46977c09f5a525d62, type: 3}
 --- !u!1 &207302406
@@ -1915,6 +1925,12 @@ BoxCollider2D:
 --- !u!1 &647587697 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2082972382831497391, guid: d2e7a3ef833155c489d4d7990f8f98cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1353190165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &647587699 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2082972382831497386, guid: d2e7a3ef833155c489d4d7990f8f98cb,
     type: 3}
   m_PrefabInstance: {fileID: 1353190165}
   m_PrefabAsset: {fileID: 0}
@@ -15440,6 +15456,11 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 1.82
       objectReference: {fileID: 0}
+    - target: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 647587699}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.x
