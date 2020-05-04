@@ -10,12 +10,14 @@ public class BaseKnight : BaseStandardEnemy
 
     public float attacktime = 1f;
     public float timeleft;
-    
+    public float wait = 1f;
+    float WT;
 
     void Start()
     {       
         timeleft = attacktime;
         sword.transform.gameObject.SetActive(false);
+        WT = wait;
     }
     void FixedUpdate()
     {
@@ -26,18 +28,24 @@ public class BaseKnight : BaseStandardEnemy
     }
     public void Attack()
     {
-        timeleft -= Time.fixedDeltaTime;
-        if (timeleft >= 0)
+        WT -= Time.fixedDeltaTime;
+        if (WT <= 0)
         {
-            sword.transform.gameObject.SetActive(true);
-            anim.SetBool("AttackingAnim", true);
-        }
-        else
-        {
-            currentaction = Default;
-            timeleft = attacktime;
-            sword.transform.gameObject.SetActive(false);
-            anim.SetBool("AttackingAnim", false);
+            rb.velocity = new Vector3(0, 0, 0);
+            timeleft -= Time.fixedDeltaTime;
+            if (timeleft >= 0)
+            {
+                sword.transform.gameObject.SetActive(true);
+                anim.SetBool("AttackingAnim", true);
+            }
+            else
+            {
+                currentaction = Default;
+                timeleft = attacktime;
+                sword.transform.gameObject.SetActive(false);
+                anim.SetBool("AttackingAnim", false);
+                WT = wait;
+            }
         }
     }
 }

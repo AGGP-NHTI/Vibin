@@ -64,6 +64,7 @@ public class BaseStandardEnemy : BaseEnemy
         {
             FF = true;
             attacked = false;
+            rb.velocity = new Vector3(0, 0, 0);
             if (Health <= 0)
             {
                 currentaction = Die;
