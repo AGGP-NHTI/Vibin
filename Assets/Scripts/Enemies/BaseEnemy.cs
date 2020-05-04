@@ -33,6 +33,7 @@ public class BaseEnemy : PWPawn
             Damage(true);
         }
     }
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (!attacked)

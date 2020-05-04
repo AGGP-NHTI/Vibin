@@ -944,13 +944,13 @@ MonoBehaviour:
   Parent: {fileID: 3697565382283973100}
   groundcheck: {fileID: 2342727634836934926}
   deathtime: 2
-  deathtime2: 2
   rb: {fileID: 8802473775235944426}
   anim: {fileID: 5333245614231805636}
   sight: {fileID: 8663956503927816719}
   sword: {fileID: 8802473774502372879}
-  attacktime: 1
+  attacktime: 0.4
   timeleft: 0
+  wait: 1
   distance: 2
   passed: 1
 --- !u!61 &5377293250567295654

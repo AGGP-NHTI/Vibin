@@ -34,6 +34,23 @@ public class BaseStandardEnemy : BaseEnemy
         base.Damage(KB);
         currentaction = Recoil;
     }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        PlayerPawn playerPawn = collision.gameObject.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        PlayerPawn playerPawn = collision.gameObject.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
     public virtual void Recoil()
     {
        
@@ -64,6 +81,7 @@ public class BaseStandardEnemy : BaseEnemy
         {
             FF = true;
             attacked = false;
+            rb.velocity = new Vector3(0, 0, 0);
             if (Health <= 0)
             {
                 currentaction = Die;
