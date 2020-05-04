@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Boss : BaseEnemy
 {
@@ -423,7 +424,7 @@ public class Boss : BaseEnemy
         if (deathtime <= 0)
         {
             slider.gameObject.SetActive(false);
-            Destroy(parent);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

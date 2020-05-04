@@ -9,7 +9,7 @@ public class BaseStandardEnemy : BaseEnemy
     public GameObject Parent;
     public enemyhitbox groundcheck;
     public float deathtime = 2f;
-    public float deathtime2 = 2f;
+   
     public Rigidbody2D rb;
     public Animator anim;
 
@@ -80,11 +80,8 @@ public class BaseStandardEnemy : BaseEnemy
         anim.SetBool("DyingAnim", true);
         deathtime -= Time.fixedDeltaTime;
         if (deathtime <= 0)
-        {
-            
-
-                Destroy(Parent);
-            
+        {           
+                Destroy(Parent);            
         }
     }
 }
