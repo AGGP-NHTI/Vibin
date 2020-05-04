@@ -8,6 +8,8 @@ public class jets : MonoBehaviour
     public GameObject spawnpoint;
     public float frequency = 0.1f;
     float t;
+    public bool On = true;
+
     
     void Start()
     {
@@ -17,12 +19,15 @@ public class jets : MonoBehaviour
     
     void Update()
     {
-        t -= Time.fixedDeltaTime;
-        if (t <= 0)
+        if (On)
         {
-            EnemyProjectile clone;
-            clone = Instantiate(projectile, spawnpoint.transform.position, spawnpoint.transform.rotation);
-            t = frequency;
+            t -= Time.fixedDeltaTime;
+            if (t <= 0)
+            {
+                EnemyProjectile clone;
+                clone = Instantiate(projectile, spawnpoint.transform.position, spawnpoint.transform.rotation);
+                t = frequency;
+            }
         }
     }
 }

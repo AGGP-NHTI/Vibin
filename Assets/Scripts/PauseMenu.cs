@@ -11,7 +11,8 @@ public class PauseMenu : MonoBehaviour
     public AudioSource Song;
     public AudioSource lines;
     public AudioSource pausesong;
-   
+    public AudioSource boss;
+    public AudioSource bosssounds;
 
     public bool isPaused = false;
 
@@ -39,6 +40,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnPause()
     {
+        bosssounds.Pause();
+        boss.Pause();
         Song.Pause();
         lines.Pause();
         pausesong.Play();
@@ -48,6 +51,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnUnpause()
     {
+        boss.UnPause();
         lines.UnPause();
         pausesong.Stop();
         Song.UnPause();

@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00330168, y: -0.5003286}
+  m_Offset: {x: -0.0116350055, y: -0.4996546}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6085869, y: 0.10144687}
+  m_Size: {x: 0.48693287, y: 0.102794886}
   m_EdgeRadius: 0
 --- !u!114 &3597743717250401582
 MonoBehaviour:
@@ -73,7 +73,7 @@ MonoBehaviour:
   hit: 0
   bash: 0
   damaging: 0
-  baseEnemy: {fileID: 0}
+  baseEnemy: {fileID: 8672261470031476354}
 --- !u!1 &7039256551001140347
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,12 +837,13 @@ MonoBehaviour:
   IgnoresDamage: 1
   LogDamageEvents: 1
   IsSpectator: 1
-  StartingHealth: 100
-  Health: 100
+  StartingHealth: 3
+  Health: 3
+  testdamage: 0
   damage: 5
   speed: 2
   attacked: 0
-  knockback: 5
+  knockback: 200
   direction: 0
   pknockback: 5
   slider: {fileID: 7371927638669087132}
@@ -922,7 +923,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.4879606, y: 0.22554255}
+  m_Offset: {x: 2.2386515, y: 0.22554255}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -933,7 +934,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.3188672, y: 0.33787727}
+  m_Size: {x: 3.8174853, y: 0.33787727}
   m_EdgeRadius: 0
 --- !u!114 &8672261472116465432
 MonoBehaviour:

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BaseEnemy : PWPawn
 {
+    public bool testdamage = false;
     public int damage = 5;
     public float speed = 2f;
     public bool attacked = false;
@@ -27,6 +28,10 @@ public class BaseEnemy : PWPawn
     void Update()
     {
         slider.value = Health;
+        if (Input.GetKeyDown(KeyCode.H) && testdamage)
+        {
+            Damage(true);
+        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,14 +41,14 @@ public class BaseEnemy : PWPawn
             if (playerPawn != null)
             {
                 playerPawn.TakeDamage(null, damage, null, null);
-                //playerPawn.rb.Addforce(gameObject.transform.forward * pknockback);
+                
             }
         }
     }
     public virtual void Damage(bool KB)
     {
         KBdir = KB;
-        Health -= 1;
+        Health--;
         attacked = true;
     }
 

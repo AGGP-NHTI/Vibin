@@ -9,6 +9,7 @@ public class BaseStandardEnemy : BaseEnemy
     public GameObject Parent;
     public enemyhitbox groundcheck;
     public float deathtime = 2f;
+   
     public Rigidbody2D rb;
     public Animator anim;
 
@@ -31,12 +32,15 @@ public class BaseStandardEnemy : BaseEnemy
     public override void Damage(bool KB)
     {
         base.Damage(KB);
-        Recoil();
+        currentaction = Recoil;
     }
     public virtual void Recoil()
     {
+       
         if (FF)
         {
+            groundcheck.gameObject.SetActive(false);
+            anim.SetBool("GettingHitAnim", true);
             if (KBdir)
             {
                 rb.AddForce(gameObject.transform.up * knockback);
@@ -44,14 +48,21 @@ public class BaseStandardEnemy : BaseEnemy
             }
             else
             {
-                rb.AddForce(gameObject.transform.up * -knockback);
+                rb.AddForce(gameObject.transform.up * knockback);
                 rb.AddForce(gameObject.transform.right * -knockback);
             }
             attacked = true;
             anim.SetBool("GettingHitAnim", true);
+            Debug.Log("hit!!!!!!");
+            FF = false;
+        }
+        if (rb.velocity.y <= 0)
+        {
+            groundcheck.gameObject.SetActive(true);
         }
         if (groundcheck.bash)
         {
+            FF = true;
             attacked = false;
             if (Health <= 0)
             {
@@ -69,9 +80,8 @@ public class BaseStandardEnemy : BaseEnemy
         anim.SetBool("DyingAnim", true);
         deathtime -= Time.fixedDeltaTime;
         if (deathtime <= 0)
-        {
-            Destroy(Parent);
-
+        {           
+                Destroy(Parent);            
         }
     }
 }

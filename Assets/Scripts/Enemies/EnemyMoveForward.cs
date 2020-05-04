@@ -25,7 +25,10 @@ public class EnemyMoveForward : BaseKnight
         }
         if (sight.hit)
         {
-            currentaction = Attack;
+            if (currentaction != Recoil)
+            {
+                currentaction = Attack;
+            }
         }
         HitCheck();
     }

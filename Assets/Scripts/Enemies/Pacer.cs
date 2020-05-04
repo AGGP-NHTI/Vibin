@@ -20,11 +20,31 @@ public class Pacer : BaseKnight
     
     void FixedUpdate()
     {
+        Debug.Log(rb.velocity.y);
         transform.localScale = localScale;
         currentaction();
         if (sight.hit)
         {
             currentaction = Attack;
+        }
+        if (sight.bash)
+        {
+            if (currentaction != Recoil)
+            {
+                localScale.x *= -1;
+                if (direction)
+                {
+                    direction = false;
+                    passed = false;
+                    sight.bash = false;
+                }
+                else if (!direction)
+                {
+                    direction = true;
+                    passed = false;
+                    sight.bash = false;
+                }
+            }
         }
         HitCheck();
 
