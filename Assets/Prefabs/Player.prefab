@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2657590145592063144}
   - component: {fileID: 3845080550817551996}
+  - component: {fileID: 7016636657808007941}
   m_Layer: 0
   m_Name: AttackRight
   m_TagString: Untagged
@@ -57,6 +58,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7016636657808007941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565764664751885082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e853ac760bd0c4c82e6387f2cabf1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2082972382831497391
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +237,7 @@ MonoBehaviour:
   jumpHeight: 3
   jumpSpeed: 8
   gravity: 9
+  health: 3
 --- !u!95 &2082972382831497381
 Animator:
   serializedVersion: 3
@@ -313,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3834038754352922596}
   - component: {fileID: 5428149209811292258}
+  - component: {fileID: 7595999868529517926}
   m_Layer: 0
   m_Name: AttackLeft
   m_TagString: Untagged
@@ -360,3 +375,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7595999868529517926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7402267967803283165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c05e704476fb9e49ad2050f5be6c6e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

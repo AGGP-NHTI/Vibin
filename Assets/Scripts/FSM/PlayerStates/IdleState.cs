@@ -41,6 +41,7 @@ public class IdleState : State
             {
                 _pawn.Anim.SetBool("PlayerAttacked", value);
                 _pawn.AttackRight.gameObject.SetActive(true);
+
                 _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 yield return new WaitForSeconds(0.2f);
                 _pawn.AttackRight.gameObject.SetActive(false);

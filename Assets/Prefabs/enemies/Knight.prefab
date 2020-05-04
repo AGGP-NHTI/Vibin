@@ -204,10 +204,11 @@ MonoBehaviour:
   IsSpectator: 1
   StartingHealth: 3
   Health: 3
+  testdamage: 0
   damage: 1
   speed: 2
   attacked: 0
-  knockback: 5
+  knockback: 100
   direction: 0
   pknockback: 5
   slider: {fileID: 6154965976844135411}

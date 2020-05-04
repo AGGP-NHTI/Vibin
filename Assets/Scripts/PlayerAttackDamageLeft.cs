@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackDamage : MonoBehaviour
+public class PlayerAttackDamageLeft : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         BaseStandardEnemy enemy = collision.gameObject.GetComponent<BaseStandardEnemy>();
 
-        if(enemy)
+        if (enemy)
         {
-            enemy.Damage(true);
+            enemy.Damage(false);
         }
     }
+
+
 }
