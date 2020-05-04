@@ -2706,6 +2706,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecurityGaurd (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8672261470031476354, guid: 3c026e441530eff4ab97260f1744587c,
+        type: 3}
+      propertyPath: testdamage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c026e441530eff4ab97260f1744587c, type: 3}
 --- !u!1 &958687774
@@ -3082,6 +3087,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5439928401284680860, guid: f871f19ec5455dc4eafb12a3aa653915,
+        type: 3}
+      propertyPath: testdamage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6154965977776791491, guid: f871f19ec5455dc4eafb12a3aa653915,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -16538,6 +16548,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.77
       objectReference: {fileID: 0}
+    - target: {fileID: 8802473775235944430, guid: 5b243f1a3258f4f46977c09f5a525d62,
+        type: 3}
+      propertyPath: testdamage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b243f1a3258f4f46977c09f5a525d62, type: 3}
 --- !u!1 &1878732196
@@ -22294,6 +22309,7 @@ MonoBehaviour:
   IsSpectator: 1
   StartingHealth: 30
   Health: 30
+  testdamage: 1
   damage: 5
   speed: 1
   attacked: 0
@@ -22302,7 +22318,6 @@ MonoBehaviour:
   pknockback: 5
   slider: {fileID: 6471194921237201426}
   KBdir: 0
-  testdamage: 0
   anim: {fileID: 6471194921217420123}
   slide: {fileID: 6471194921882939843}
   flashtime: 0.1

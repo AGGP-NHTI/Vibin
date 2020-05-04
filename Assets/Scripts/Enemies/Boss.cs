@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Boss : BaseEnemy
 {
-    public bool testdamage = false;
+    
     public Animator anim;
     Color flash;
     public Image slide;

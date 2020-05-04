@@ -837,8 +837,9 @@ MonoBehaviour:
   IgnoresDamage: 1
   LogDamageEvents: 1
   IsSpectator: 1
-  StartingHealth: 100
-  Health: 100
+  StartingHealth: 3
+  Health: 3
+  testdamage: 0
   damage: 5
   speed: 2
   attacked: 0
@@ -850,6 +851,7 @@ MonoBehaviour:
   Parent: {fileID: 7371927640235399995}
   groundcheck: {fileID: 3597743717250401582}
   deathtime: 2
+  deathtime2: 2
   rb: {fileID: 8672261470031476477}
   anim: {fileID: 8672261470031476355}
   vision: {fileID: 8672261472116465432}
