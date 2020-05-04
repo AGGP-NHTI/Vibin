@@ -34,6 +34,23 @@ public class BaseStandardEnemy : BaseEnemy
         base.Damage(KB);
         currentaction = Recoil;
     }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        PlayerPawn playerPawn = collision.gameObject.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        PlayerPawn playerPawn = collision.gameObject.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
     public virtual void Recoil()
     {
        

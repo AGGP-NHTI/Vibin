@@ -252,11 +252,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8802473775235944430, guid: 5b243f1a3258f4f46977c09f5a525d62,
-        type: 3}
-      propertyPath: attacktime
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b243f1a3258f4f46977c09f5a525d62, type: 3}
 --- !u!1 &207302406
