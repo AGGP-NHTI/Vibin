@@ -15430,6 +15430,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1565764664751885082, guid: d2e7a3ef833155c489d4d7990f8f98cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: jumpHeight
@@ -15519,6 +15524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402267967803283165, guid: d2e7a3ef833155c489d4d7990f8f98cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2e7a3ef833155c489d4d7990f8f98cb, type: 3}
