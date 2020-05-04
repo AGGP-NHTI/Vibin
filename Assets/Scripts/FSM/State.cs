@@ -56,4 +56,10 @@ public abstract class State
 
         yield break;
     }
+
+    public virtual IEnumerator Interact(bool value)
+    {
+
+        yield break;
+    }
 }

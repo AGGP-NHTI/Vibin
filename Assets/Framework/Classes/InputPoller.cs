@@ -183,7 +183,7 @@ public class InputPoller : Info
         IS.AddButton("Vertical", Input.GetButtonDown("Vertical"));
         IS.AddButton("Fire1", Input.GetButtonDown("Fire1"));
         IS.AddButton("Fire2", Input.GetButtonDown("Fire2"));
-        IS.AddButton("Fire3", Input.GetButtonDown("Fire3"));
+        IS.AddButton("Interact", Input.GetButtonDown("Interact"));
         //IS.AddButton("Fire4", Input.GetButton("Fire4"));
 
     }

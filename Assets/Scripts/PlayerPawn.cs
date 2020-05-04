@@ -21,6 +21,7 @@ public class PlayerPawn : PWPawn
     public float jumpHeight;
     public float jumpSpeed;
     public float gravity;
+    public bool InFrontOfRope;
 
     public float health = 3;
 
@@ -63,6 +64,11 @@ public class PlayerPawn : PWPawn
     public override void Fire2(bool value)
     {
         StartCoroutine(_currentState.HeavyAttack(value));
+    }
+
+    public override void Interact(bool value)
+    {
+        StartCoroutine(_currentState.Interact(value));
     }
 
     public void Gravity()

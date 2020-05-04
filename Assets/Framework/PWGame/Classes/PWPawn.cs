@@ -27,6 +27,11 @@ public class PWPawn : Pawn {
        
     }
 
+    public virtual void Interact(bool value)
+    {
+
+    }
+
     protected override bool ProcessDamage(Actor Source, float Value, DamageEventInfo EventInfo, Controller Instigator)
     {
         // Setup for Logging Dammage Information  

@@ -1932,6 +1932,7 @@ GameObject:
   - component: {fileID: 833742377}
   - component: {fileID: 833742376}
   - component: {fileID: 833742375}
+  - component: {fileID: 833742380}
   m_Layer: 0
   m_Name: ' Interactable'
   m_TagString: Untagged
@@ -2469,6 +2470,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &833742380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833742373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddd93d4c55c5cd4cb332927dcb029f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &921633477
 GameObject:
   m_ObjectHideFlags: 0
@@ -15443,12 +15456,12 @@ PrefabInstance:
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.7
+      value: 32.97
       objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.62
+      value: -7.6
       objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}

@@ -59,4 +59,17 @@ public class PWPlayerController : PlayerController
         }
     }
 
+    public override void Interact(bool value)
+    {
+        if (value)
+        {
+            LOG("PC: Interact");
+            PWPawn PWP = ((PWPawn)PossesedPawn);
+            if (PWP)
+            {
+                PWP.Interact(value);
+            }
+        }
+    }
+
 }

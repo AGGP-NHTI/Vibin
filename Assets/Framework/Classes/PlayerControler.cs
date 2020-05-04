@@ -123,7 +123,7 @@ public class PlayerController : Controller
         AddButton("Vertical", Vertical);
         AddButton("Fire1", Fire1);
         AddButton("Fire2", Fire2);
-        AddButton("Fire3", Fire3);
+        AddButton("Interact", Interact);
        // AddButton("Fire4", Fire4);
     }
 
@@ -159,11 +159,11 @@ public class PlayerController : Controller
         }
     }
 
-    public virtual void Fire3(bool value)
+    public virtual void Interact(bool value)
     {
         if (value)
         {
-            LOG("Del-Fire3");
+            LOG("Del-Interact");
         }
     }
 

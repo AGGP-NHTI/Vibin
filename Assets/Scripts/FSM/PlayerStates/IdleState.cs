@@ -63,6 +63,15 @@ public class IdleState : State
         yield break;
     }
 
+    public override IEnumerator Interact(bool value)
+    {
+        if(_pawn.InFrontOfRope)
+        {
+            _pawn.SetState(new ClimbingState(_pawn));
+        }
+        yield break;
+    }
+
     public override IEnumerator Idle()
     {
         return base.Idle();
