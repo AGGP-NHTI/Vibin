@@ -24,5 +24,9 @@ public class PlayerAttackDamage : MonoBehaviour
         {
             enemy.Damage(true);
         }
+        else if(collision.gameObject.GetComponent<BaseEnemy>())
+        {
+            collision.gameObject.GetComponent<BaseEnemy>().Damage(true);
+        }
     }
 }

@@ -67,6 +67,7 @@ public class IdleState : State
     {
         if(_pawn.InFrontOfRope)
         {
+            _pawn.gameObject.transform.position = new Vector3(_pawn.ropeXPosition, _pawn.transform.position.y, 0);
             _pawn.SetState(new ClimbingState(_pawn));
         }
         yield break;

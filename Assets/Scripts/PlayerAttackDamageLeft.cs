@@ -23,6 +23,10 @@ public class PlayerAttackDamageLeft : MonoBehaviour
         {
             enemy.Damage(false);
         }
+        else if (collision.gameObject.GetComponent<BaseEnemy>())
+        {
+            collision.gameObject.GetComponent<BaseEnemy>().Damage(true);
+        }
     }
 
 

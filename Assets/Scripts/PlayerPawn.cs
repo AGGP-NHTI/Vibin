@@ -22,6 +22,7 @@ public class PlayerPawn : PWPawn
     public float jumpSpeed;
     public float gravity;
     public bool InFrontOfRope;
+    public float ropeXPosition;
 
     public float health = 3;
 
@@ -83,6 +84,11 @@ public class PlayerPawn : PWPawn
         }
 
         
+    }
+
+    public void Damage(Vector3 KBdirection)
+    {
+        Debug.Log("I got hit by an AI");
     }
 }
 
