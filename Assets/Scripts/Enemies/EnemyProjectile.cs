@@ -8,7 +8,7 @@ public class EnemyProjectile : MonoBehaviour
     public float speed;
     public float LT = 5f;
     public bool penetrate = false;
-    
+    public bool destructable = false;
     
     void FixedUpdate()
     {
@@ -26,6 +26,8 @@ public class EnemyProjectile : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        PlayerAttackDamageLeft PL = collider.GetComponent(typeof(PlayerAttackDamageLeft)) as PlayerAttackDamageLeft;
+        PlayerAttackDamage PR = collider.GetComponent(typeof(PlayerAttackDamage)) as PlayerAttackDamage;
         if (playerPawn != null)
         {
             playerPawn.Damage(gameObject.transform.right);
@@ -33,6 +35,10 @@ public class EnemyProjectile : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+        if (PL != null || PR != null)
+        {
+            Destroy(gameObject);
         }
     }
 }

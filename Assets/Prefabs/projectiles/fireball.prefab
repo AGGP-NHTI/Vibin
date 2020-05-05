@@ -100,6 +100,7 @@ MonoBehaviour:
   speed: 2
   LT: 5
   penetrate: 0
+  destructable: 1
 --- !u!95 &7039032815845246258
 Animator:
   serializedVersion: 3
