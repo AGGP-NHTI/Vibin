@@ -9,7 +9,6 @@ public class taser : EnemyProjectile
 
     float walkSpeed;
     public GameObject sound;
-    // Update is called once per frame
     
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -20,6 +19,7 @@ public class taser : EnemyProjectile
             walkSpeed = playerPawn.walkSpeed;
             playerPawn.walkSpeed = 0;
             sound.SetActive(true);
+            playerPawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
     void OnTriggerExit2D(Collider2D collider)
@@ -28,7 +28,8 @@ public class taser : EnemyProjectile
         if (playerPawn != null)
         {
             playerPawn.walkSpeed = walkSpeed;
-            
+            playerPawn.rb.constraints = RigidbodyConstraints2D.None;
+            playerPawn.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
     public override void Move()
