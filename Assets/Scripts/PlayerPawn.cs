@@ -92,11 +92,10 @@ public class PlayerPawn : PWPawn
 
     public void Damage(Vector3 KBdirection)
     {
-        Debug.Log("knockback direction: " + KBdirection);
+        Debug.Log("knockback direction: " + KBdirection.x);
         Debug.Log("I got hit by an AI");
-        float direction = KBdirection.x;
 
-        rb.AddForce(new Vector2(direction * knockback, knockback/10));
+        health -= 1;
     }
 }
 
