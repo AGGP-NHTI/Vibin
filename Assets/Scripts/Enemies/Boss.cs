@@ -108,7 +108,11 @@ public class Boss : BaseEnemy
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("yo");
+        PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        if (playerPawn != null)
+        {
+            Debug.Log("yo");
+        }
     }
     void FixedUpdate()
     {
