@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class PlayerPawn : PWPawn
 {
     private State _currentState;
     public Rigidbody2D rb;
     public Animator Anim;
+    public AudioSource audio;
 
     public GameObject AttackRight;
     public GameObject AttackLeft;
