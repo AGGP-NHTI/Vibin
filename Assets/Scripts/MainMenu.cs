@@ -35,6 +35,10 @@ public class MainMenu : MonoBehaviour
         {
             slider3.value = PlayerPrefs.GetFloat("Voices", 0.5f);
         }
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            PlayerPrefs.SetInt("AtBoss", 0);
+        }
     }
    
     public void PlayGame()
