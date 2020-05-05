@@ -853,8 +853,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Main: {fileID: 237481255}
-  Options: {fileID: 0}
-  Credits: {fileID: 1885925091}
+  Options: {fileID: 482295179}
+  Credits: {fileID: 482295179}
   select: {fileID: 8300000, guid: 7a61ea0249b5b9944b0a5612941f130f, type: 3}
   goback: {fileID: 8300000, guid: 7d3e8d056be640744a48a7123e5f584c, type: 3}
   slider: {fileID: 0}
@@ -862,7 +862,7 @@ MonoBehaviour:
   slider3: {fileID: 0}
   audioSource: {fileID: 80626347}
   audioSource2: {fileID: 1020520003}
-  audioSource3: {fileID: 0}
+  audioSource3: {fileID: 935016448}
 --- !u!1 &826513286
 GameObject:
   m_ObjectHideFlags: 0
