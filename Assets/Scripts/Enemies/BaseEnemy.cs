@@ -10,6 +10,7 @@ public class BaseEnemy : PWPawn
     public float speed = 2f;
     public bool attacked = false;
     public float knockback = 5f;
+    protected bool candamage = true;
     
     protected Vector3 localScale;
     public Vector3 dir;
@@ -43,7 +44,10 @@ public class BaseEnemy : PWPawn
             PlayerPawn playerPawn = collision.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
             if (playerPawn != null)
             {
-                playerPawn.TakeDamage(null, damage, null, null);
+                if (candamage)
+                {
+                    playerPawn.TakeDamage(null, damage, null, null);
+                }
                 
             }
         }

@@ -13,6 +13,8 @@ public class enemyhitbox : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         PlayerPawn playerPawn = collider.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
+        PlayerAttackDamageLeft PL = collider.GetComponent(typeof(PlayerAttackDamageLeft)) as PlayerAttackDamageLeft;
+        PlayerAttackDamage PR = collider.GetComponent(typeof(PlayerAttackDamage)) as PlayerAttackDamage;
         if (playerPawn != null)
         {
             hit = true;
@@ -20,6 +22,14 @@ public class enemyhitbox : MonoBehaviour
             {
                 playerPawn.Damage(baseEnemy.gameObject.transform.right);
             }
+        }
+        else if (PL != null)
+        {
+
+        }
+        else if (PR != null)
+        {
+
         }
         else
         {

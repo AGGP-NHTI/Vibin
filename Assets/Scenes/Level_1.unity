@@ -23285,10 +23285,10 @@ MonoBehaviour:
   IgnoresDamage: 1
   LogDamageEvents: 1
   IsSpectator: 1
-  StartingHealth: 100
-  Health: 100
+  StartingHealth: 50
+  Health: 50
   testdamage: 1
-  damage: 5
+  damage: 1
   speed: 1
   attacked: 0
   knockback: 5

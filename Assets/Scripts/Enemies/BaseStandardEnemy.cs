@@ -58,7 +58,7 @@ public class BaseStandardEnemy : BaseEnemy
     }
     public virtual void Recoil()
     {
-       
+        candamage = false;
         if (FF)
         {
             groundcheck.gameObject.SetActive(false);
@@ -94,6 +94,7 @@ public class BaseStandardEnemy : BaseEnemy
             }
             else
             {
+                candamage = true;
                 currentaction = Default;
                 anim.SetBool("GettingHitAnim", false);
             }
@@ -101,6 +102,7 @@ public class BaseStandardEnemy : BaseEnemy
     }
     public virtual void Die()
     {
+        candamage = false;
         anim.SetBool("DyingAnim", true);
         deathtime -= Time.fixedDeltaTime;
         if (deathtime <= 0)
