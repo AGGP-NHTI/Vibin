@@ -16923,6 +16923,36 @@ Transform:
   m_Father: {fileID: 577122920}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2032891340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2032891341}
+  m_Layer: 0
+  m_Name: deathpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2032891341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032891340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -7.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6471194921427328696}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2142090495
 GameObject:
   m_ObjectHideFlags: 0
@@ -22403,6 +22433,7 @@ MonoBehaviour:
   SpinPoint: {fileID: 6471194920995250652}
   SpinPoint2: {fileID: 6471194921800793710}
   back: {fileID: 6471194921134462976}
+  down: {fileID: 2032891340}
   index: 0
 --- !u!1 &6471194921217420071
 GameObject:
@@ -22436,7 +22467,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.051883698, y: 0.09221077}
@@ -22558,7 +22589,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.12345123, y: -0.33799028}
@@ -22787,6 +22818,7 @@ Transform:
   - {fileID: 6471194921216217983}
   - {fileID: 6471194922168708453}
   - {fileID: 6471194920450153257}
+  - {fileID: 2032891341}
   m_Father: {fileID: 6471194920419642010}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

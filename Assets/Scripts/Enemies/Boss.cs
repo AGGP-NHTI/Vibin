@@ -61,6 +61,7 @@ public class Boss : BaseEnemy
     public GameObject SpinPoint;
     public GameObject SpinPoint2;
     public GameObject back;
+    public GameObject down;
    
     public int index = 0;
     bool spinning = false;
@@ -420,6 +421,7 @@ public class Boss : BaseEnemy
     }
     public void Die()
     {
+        location.currentTarget = blitzpoint;
         deathtime -= Time.fixedDeltaTime;
         if (deathtime <= 0)
         {

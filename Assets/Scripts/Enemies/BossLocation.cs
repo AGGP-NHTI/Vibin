@@ -15,6 +15,7 @@ public class BossLocation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentTarget = boss.gameObject;
         transf = gameObject.GetComponent<Transform>();
     }
 
