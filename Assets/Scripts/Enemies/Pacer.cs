@@ -20,7 +20,7 @@ public class Pacer : BaseKnight
     
     void FixedUpdate()
     {
-        Debug.Log(rb.velocity.y);
+        
         transform.localScale = localScale;
         currentaction();
         if (sight.hit)
