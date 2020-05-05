@@ -41,10 +41,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    void FixedUpdate()
-    {
-       
-    }
+    
 
     public void QuitGame()
     {
@@ -110,6 +107,10 @@ public class MainMenu : MonoBehaviour
         audioSource2.volume = PlayerPrefs.GetFloat("Effects");
 
         PlayerPrefs.Save();
+    }
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
     
 }

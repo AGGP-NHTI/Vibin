@@ -208,8 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: 0
-  rate: 0.3
-  time: 2.6
+  rate: 2
 --- !u!1 &145921756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,9 +2226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-  - {fileID: 119586186}
-  - {fileID: 1689051545}
   - {fileID: 1520451672}
+  - {fileID: 1689051545}
+  - {fileID: 119586186}
   healthindex: 0
 --- !u!1 &921633477
 GameObject:
@@ -15576,12 +15575,12 @@ PrefabInstance:
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.37
+      value: 55.29
       objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.26
+      value: -2.39
       objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
@@ -16555,8 +16554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: 0
-  rate: 0.3
-  time: 2.6
+  rate: 2
 --- !u!1 &1648349884
 GameObject:
   m_ObjectHideFlags: 0
@@ -16772,8 +16770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: 0
-  rate: 0.3
-  time: 2.6
+  rate: 2
 --- !u!1001 &1699655253
 PrefabInstance:
   m_ObjectHideFlags: 0

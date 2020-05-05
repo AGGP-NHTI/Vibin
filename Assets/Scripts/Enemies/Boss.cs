@@ -13,6 +13,8 @@ public class Boss : BaseEnemy
     public float flashtime = 0.5f;
     float currentflashtime;
     Color norm;
+
+    
     delegate void currentAction();
     currentAction currentaction;
     currentAction nextaction;
@@ -93,7 +95,15 @@ public class Boss : BaseEnemy
     {
         if (currentaction != Begin)
         {
-            slider.value = Health;
+            if (slider.value > Health)
+            {
+                slider.value -= 20f * Time.fixedDeltaTime;
+            }
+            if (slider.value < Health)
+            {
+                slider.value = Health;
+            }
+            
         }
     }
     void FixedUpdate()
