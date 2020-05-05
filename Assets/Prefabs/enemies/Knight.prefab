@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5287095656380768388
 Transform:
   m_ObjectHideFlags: 0
@@ -209,8 +209,8 @@ MonoBehaviour:
   speed: 2
   attacked: 0
   knockback: 100
+  dir: {x: 0, y: 0, z: 0}
   direction: 0
-  pknockback: 5
   slider: {fileID: 6154965976844135411}
   KBdir: 0
   Parent: {fileID: 6154965978359062868}
@@ -222,6 +222,7 @@ MonoBehaviour:
   sword: {fileID: 6841315564356386160}
   attacktime: 1
   timeleft: 0
+  wait: 1
   hitbox: {fileID: 5439928402564310391}
 --- !u!95 &3320657945892706323
 Animator:
@@ -366,7 +367,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.09}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -377,7 +378,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.26, y: 0.28}
   m_EdgeRadius: 0
 --- !u!61 &4266937733589151091
 BoxCollider2D:
