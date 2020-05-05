@@ -15245,6 +15245,11 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 647587699}
+    - target: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
+        type: 3}
+      propertyPath: knockback
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -24,6 +24,7 @@ public class PlayerPawn : PWPawn
     public bool InFrontOfRope;
     public float ropeXPosition;
     public bool attacking;
+    public float knockback;
 
     public float health = 3;
 
@@ -84,12 +85,18 @@ public class PlayerPawn : PWPawn
             rb.velocity -= Vector2.up * gravity * 2.5f *Time.deltaTime;
         }
 
+       
+
         
     }
 
     public void Damage(Vector3 KBdirection)
     {
+        Debug.Log("knockback direction: " + KBdirection);
         Debug.Log("I got hit by an AI");
+        float direction = KBdirection.x;
+
+        rb.AddForce(new Vector2(direction * knockback, knockback/10));
     }
 }
 
