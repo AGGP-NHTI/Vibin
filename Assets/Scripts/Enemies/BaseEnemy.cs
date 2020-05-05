@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BaseEnemy : PWPawn
 {
     public bool testdamage = false;
-    public int damage = 5;
+    public int damage = 1;
     public float speed = 2f;
     public bool attacked = false;
     public float knockback = 5f;
@@ -14,7 +14,7 @@ public class BaseEnemy : PWPawn
     protected Vector3 localScale;
     public Vector3 dir;
     public bool direction = false;
-    public float pknockback = 5f;
+    
     public Slider slider;
     
     public bool KBdir = false;

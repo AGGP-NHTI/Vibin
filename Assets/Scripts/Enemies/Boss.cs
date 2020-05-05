@@ -106,6 +106,10 @@ public class Boss : BaseEnemy
             
         }
     }
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("yo");
+    }
     void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.H) && testdamage)

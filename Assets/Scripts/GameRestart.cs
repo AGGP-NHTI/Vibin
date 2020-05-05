@@ -10,7 +10,7 @@ public class GameRestart : MonoBehaviour
     {
         if(player.gameObject.GetComponent<PlayerPawn>().health < 1)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
         }
     }
 }

@@ -37,9 +37,14 @@ public class BaseStandardEnemy : BaseEnemy
     void OnCollisionStay2D(Collision2D collision)
     {
         PlayerPawn playerPawn = collision.gameObject.GetComponent(typeof(PlayerPawn)) as PlayerPawn;
-        if (playerPawn != null)
+        if (playerPawn != null && !attacked)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        if (attacked)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
     void OnCollisionExit2D(Collision2D collision)
