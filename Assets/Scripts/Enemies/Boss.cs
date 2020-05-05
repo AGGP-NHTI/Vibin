@@ -384,6 +384,7 @@ public class Boss : BaseEnemy
             if (v <= 0 && VA > 0)
             {
                 secondary.PlayOneShot(fbs, PlayerPrefs.GetFloat("Effects"));
+                anim.SetTrigger("fballtrig");
                 if (VA % 2 == 0)
                 {
                     GameObject clone;
