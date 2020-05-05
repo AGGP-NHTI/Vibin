@@ -25,6 +25,7 @@ public class PlayerPawn : PWPawn
     public float ropeXPosition;
     public bool attacking;
     public float knockback;
+    public bool invincible;
 
     public float health = 3;
 
@@ -92,10 +93,15 @@ public class PlayerPawn : PWPawn
 
     public void Damage(Vector3 KBdirection)
     {
-        Debug.Log("knockback direction: " + KBdirection.x);
-        Debug.Log("I got hit by an AI");
 
-        health -= 1;
+        if (!invincible)
+        {
+            Debug.Log("knockback direction: " + KBdirection.x);
+            Debug.Log("I got hit by an AI");
+            StartCoroutine(_currentState.TookDamage());
+
+            health -= 1;
+        }
     }
 }
 

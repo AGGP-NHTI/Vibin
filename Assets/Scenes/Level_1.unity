@@ -2124,12 +2124,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1353190165}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &647587699 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 2082972382831497386, guid: d2e7a3ef833155c489d4d7990f8f98cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1353190165}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &647587701 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
@@ -15858,26 +15852,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
-        type: 3}
-      propertyPath: jumpHeight
-      value: 1.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
-        type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 647587699}
-    - target: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
-        type: 3}
-      propertyPath: knockback
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
-        type: 3}
-      propertyPath: SlamSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15947,11 +15921,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.77876
-      objectReference: {fileID: 0}
-    - target: {fileID: 2082972382831497387, guid: d2e7a3ef833155c489d4d7990f8f98cb,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497391, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
