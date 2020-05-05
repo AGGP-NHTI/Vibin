@@ -12,6 +12,7 @@ public class BaseEnemy : PWPawn
     public float knockback = 5f;
     
     protected Vector3 localScale;
+    public Vector3 dir;
     public bool direction = false;
     public float pknockback = 5f;
     public Slider slider;
@@ -22,7 +23,7 @@ public class BaseEnemy : PWPawn
     void Start()
     {
         localScale = transform.localScale;
-        
+        dir = gameObject.transform.position;
     }
 
     void Update()
@@ -32,6 +33,7 @@ public class BaseEnemy : PWPawn
         {
             Damage(true);
         }
+        dir = gameObject.transform.position;
     }
     
     void OnTriggerEnter2D(Collider2D collision)
@@ -48,9 +50,12 @@ public class BaseEnemy : PWPawn
     }
     public virtual void Damage(bool KB)
     {
-        KBdir = KB;
-        Health--;
-        attacked = true;
+        if (!attacked)
+        {
+            KBdir = KB;
+            Health--;
+            attacked = true;
+        }
     }
 
 
