@@ -34,6 +34,7 @@ public class JumpState : State
         _pawn.AttackLeft.gameObject.SetActive(true);
         _pawn.AttackRight.gameObject.SetActive(true);
         _pawn.invincible = true;
+        _pawn.audio.Play();
         yield return new WaitForSeconds(1);
         _pawn.AttackLeft.gameObject.SetActive(false);
         _pawn.AttackRight.gameObject.SetActive(false);

@@ -32,6 +32,7 @@ public class WalkState : State
                 _pawn.AttackLeft.gameObject.SetActive(true);
                 _pawn.attacking = true;
                 _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                _pawn.audio.Play();
                 yield return new WaitForSeconds(0.2f);
                 _pawn.AttackLeft.gameObject.SetActive(false);
                 _pawn.attacking = false;
@@ -48,6 +49,7 @@ public class WalkState : State
                     _pawn.attacking = true;
                     _pawn.AttackRight.gameObject.SetActive(true);
                     _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                    _pawn.audio.Play();
                     yield return new WaitForSeconds(0.2f);
                     _pawn.AttackRight.gameObject.SetActive(false);
                     _pawn.attacking = false;
