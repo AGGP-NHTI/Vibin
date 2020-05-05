@@ -370,6 +370,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.77
       objectReference: {fileID: 0}
+    - target: {fileID: 8802473774502372876, guid: 5b243f1a3258f4f46977c09f5a525d62,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8802473775235944427, guid: 5b243f1a3258f4f46977c09f5a525d62,
         type: 3}
       propertyPath: m_SortingOrder
@@ -17506,6 +17511,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802473774502372876, guid: 5b243f1a3258f4f46977c09f5a525d62,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8802473775235944430, guid: 5b243f1a3258f4f46977c09f5a525d62,
         type: 3}
