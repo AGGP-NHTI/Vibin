@@ -12,14 +12,15 @@ public class ClimbingState : State
     {
         if (value)
         {
-            _pawn.SetState(new IdleState(_pawn));
+            _pawn.jumped = true;
+            _pawn.SetState(new JumpState(_pawn));
         }
         yield break;
     }
 
     public override IEnumerator Walk(float value)
     {
-        _pawn.rb.velocity = new Vector2(0,value * 2);
+        _pawn.rb.velocity = new Vector2(0,value * 4);
         yield break;
     }
 

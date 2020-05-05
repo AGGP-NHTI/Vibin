@@ -52,7 +52,15 @@ public class WalkState : State
         }
         yield break;
     }
-
+    public override IEnumerator Interact(bool value)
+    {
+        if (_pawn.InFrontOfRope)
+        {
+            _pawn.gameObject.transform.position = new Vector3(_pawn.ropeXPosition, _pawn.transform.position.y, 0);
+            _pawn.SetState(new ClimbingState(_pawn));
+        }
+        yield break;
+    }
     public override IEnumerator Walk(float value)
     {
         if(value == 0)
