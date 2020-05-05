@@ -23,9 +23,18 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        slider2.value = PlayerPrefs.GetFloat("Effects", 0.5f);
-        slider.value = PlayerPrefs.GetFloat("Music", 0.5f);
-        slider3.value = PlayerPrefs.GetFloat("Voices", 0.5f);
+        if (slider2 != null)
+        {
+            slider2.value = PlayerPrefs.GetFloat("Effects", 0.5f);
+        }
+        if (slider != null)
+        {
+            slider.value = PlayerPrefs.GetFloat("Music", 0.5f);
+        }
+        if (slider2 != null)
+        {
+            slider3.value = PlayerPrefs.GetFloat("Voices", 0.5f);
+        }
     }
    
     public void PlayGame()
