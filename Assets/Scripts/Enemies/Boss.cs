@@ -63,6 +63,7 @@ public class Boss : BaseEnemy
     public GameObject SpinPoint;
     public GameObject SpinPoint2;
     public GameObject back;
+    public GameObject back2;
     public GameObject down;
    
     public int index = 0;
@@ -358,7 +359,7 @@ public class Boss : BaseEnemy
         {
             passed = true;
         }
-        if (passed && Vector3.Distance(back.transform.position, gameObject.transform.position) <= 1)
+        if (passed && Vector3.Distance(back2.transform.position, gameObject.transform.position) <= 1)
         {
             currentaction = Spin2;
             spincycle = false;
