@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba21c45ae2843f42bbb9e794162b998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 7.4
+  length: 7
   first: {fileID: 80626347}
   loop: {fileID: 142942432}
 --- !u!1 &826513286

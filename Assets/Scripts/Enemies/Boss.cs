@@ -437,11 +437,12 @@ public class Boss : BaseEnemy
             currentaction = Die;
             anim.SetBool("DyingAnim", true);
             FB = false;
+            secondary.PlayOneShot(roar, PlayerPrefs.GetFloat("Effects", 0.5f));
         }
     }
     public void Die()
     {
-        location.currentTarget = blitzpoint;
+        location.currentTarget = down;
         deathtime -= Time.fixedDeltaTime;
         if (deathtime <= 0)
         {

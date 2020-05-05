@@ -15,7 +15,7 @@ public class endmusic : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         length -= Time.fixedDeltaTime;
         if (length <= 0)
