@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6943990211842939679}
   - component: {fileID: 6943990211842939678}
-  - component: {fileID: 6943990211842939681}
   - component: {fileID: 6943990211842939680}
   - component: {fileID: 7039032815845246258}
   - component: {fileID: 73536731144897736}
@@ -85,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6943990211842939681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6943990211842939683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b649fbf3ed487ef409aebc5f7c613b85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  speed: 0
-  LT: 5
-  penetrate: 0
 --- !u!114 &6943990211842939680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b649fbf3ed487ef409aebc5f7c613b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 1
   speed: 2
   LT: 5
   penetrate: 0
