@@ -58,15 +58,16 @@ public class BaseStandardEnemy : BaseEnemy
         {
             groundcheck.gameObject.SetActive(false);
             anim.SetBool("GettingHitAnim", true);
+            rb.AddForce(Vector3.up * (knockback * 2));
             if (KBdir)
             {
-                rb.AddForce(gameObject.transform.up * knockback);
-                rb.AddForce(gameObject.transform.right * knockback);               
+                
+                rb.AddForce(Vector3.right * knockback);               
             }
             else
             {
-                rb.AddForce(gameObject.transform.up * knockback);
-                rb.AddForce(gameObject.transform.right * -knockback);
+               
+                rb.AddForce(Vector3.right * -knockback);
             }
             attacked = true;
             anim.SetBool("GettingHitAnim", true);
