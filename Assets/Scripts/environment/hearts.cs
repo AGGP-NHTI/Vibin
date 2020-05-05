@@ -6,15 +6,15 @@ public class hearts : MonoBehaviour
 {
     public bool go = false;
     public float rate = 5f;
-    public float time = 3f;
+    
     
     void Update()
     {
         if (go)
         {
-            transform.localScale -= new Vector3(rate, rate, rate) * Time.deltaTime;
-            time -= Time.fixedDeltaTime;
-            if (time <= 0)
+            transform.localScale -= new Vector3(rate, rate, rate) * Time.fixedDeltaTime;
+            
+            if (transform.localScale.x <= 0)
             {
                 Destroy(gameObject);
             }

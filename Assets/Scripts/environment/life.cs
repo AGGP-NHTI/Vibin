@@ -11,8 +11,11 @@ public class life : MonoBehaviour
     public void calldamage()
     {
         health[healthindex].Vanish();
-        healthindex++;
-        if (healthindex <= health.Capacity -1)
+        healthindex++;                         
+    }
+    void Update()
+    {
+        if (health[health.Capacity - 1] == null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         }
