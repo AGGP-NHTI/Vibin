@@ -25,6 +25,10 @@ public class BaseKnight : BaseStandardEnemy
         {
             currentaction = Attack;
         }
+        if (currentaction == Die || currentaction == Recoil)
+        {
+            sword.transform.gameObject.SetActive(false);
+        }
     }
     public void Attack()
     {
