@@ -23,6 +23,7 @@ public class PlayerPawn : PWPawn
     public float gravity;
     public bool InFrontOfRope;
     public float ropeXPosition;
+    public bool attacking;
 
     public float health = 3;
 

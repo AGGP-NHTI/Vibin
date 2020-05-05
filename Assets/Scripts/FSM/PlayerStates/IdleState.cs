@@ -25,29 +25,34 @@ public class IdleState : State
         if (value)
         {
 
-            if (_pawn.Anim.GetCurrentAnimatorStateInfo(0).IsName("IdleLeftAnimation"))
+            if (_pawn.Anim.GetCurrentAnimatorStateInfo(0).IsName("IdleLeftAnimation") && !_pawn.attacking)
             {
                 _pawn.Anim.SetBool("PlayerAttacked", value);
+                _pawn.attacking = true;
                 _pawn.AttackLeft.gameObject.SetActive(true);
                 _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 yield return new WaitForSeconds(0.2f);
                 _pawn.AttackLeft.gameObject.SetActive(false);
                 _pawn.Anim.SetBool("PlayerAttacked", false);
+                _pawn.attacking = false;
                 _pawn.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
 
             }
             else
             {
-                _pawn.Anim.SetBool("PlayerAttacked", value);
-                _pawn.AttackRight.gameObject.SetActive(true);
-
-                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
-                yield return new WaitForSeconds(0.2f);
-                _pawn.AttackRight.gameObject.SetActive(false);
-                _pawn.Anim.SetBool("PlayerAttacked", false);
-                _pawn.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
+                if (!_pawn.attacking)
+                {
+                    _pawn.Anim.SetBool("PlayerAttacked", value);
+                    _pawn.AttackRight.gameObject.SetActive(true);
+                    _pawn.attacking = true;
+                    _pawn.rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                    yield return new WaitForSeconds(0.2f);
+                    _pawn.AttackRight.gameObject.SetActive(false);
+                    _pawn.attacking = false;
+                    _pawn.Anim.SetBool("PlayerAttacked", false);
+                    _pawn.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                }
             }
         }
         yield break;
