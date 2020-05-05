@@ -18,7 +18,7 @@ public class enemyhitbox : MonoBehaviour
             hit = true;
             if (damaging)
             {
-                playerPawn.Damage(baseEnemy.dir);
+                playerPawn.Damage(baseEnemy.gameObject.transform.right);
             }
         }
         else
