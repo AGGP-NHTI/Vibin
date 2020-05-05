@@ -12,8 +12,11 @@ public class ClimbingState : State
     {
         if (value)
         {
-            _pawn.jumped = true;
+            _pawn.jumpLimit = _pawn.gameObject.transform.position.y;
+            _pawn.rb.velocity = new Vector2(_pawn.rb.velocity.x, _pawn.jumpSpeed);
             _pawn.SetState(new JumpState(_pawn));
+            yield return new WaitForSeconds(0.1f);
+            _pawn.jumped = true;
         }
         yield break;
     }

@@ -2708,6 +2708,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1253304652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3480321739918441021, guid: 0f4c6c0800aeb264b8454013b8b5fcbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1699655253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1253304653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253304652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaae98fc0ece7204e9d74e537d6dbe94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 647587697}
 --- !u!1 &1287662423
 GameObject:
   m_ObjectHideFlags: 0
@@ -15249,6 +15268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: knockback
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
+        type: 3}
+      propertyPath: SlamSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
