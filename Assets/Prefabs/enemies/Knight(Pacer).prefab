@@ -283,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3697565382156971841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.258, z: 0}
+  m_LocalPosition: {x: 0, y: 0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8802473775235944424}
@@ -936,7 +936,8 @@ MonoBehaviour:
   damage: 1
   speed: 2
   attacked: 0
-  knockback: 200
+  knockback: 100
+  dir: {x: 0, y: 0, z: 0}
   direction: 0
   pknockback: 5
   slider: {fileID: 3697565382411633775}
