@@ -1875,7 +1875,7 @@ MonoBehaviour:
 
     D - Right / climb up
 
-    E - Interact
+    E - Climb Rope
 
     Space 
     - Jump
@@ -23443,8 +23443,8 @@ MonoBehaviour:
   IgnoresDamage: 1
   LogDamageEvents: 1
   IsSpectator: 1
-  StartingHealth: 120
-  Health: 120
+  StartingHealth: 75
+  Health: 75
   testdamage: 0
   damage: 1
   speed: 1
