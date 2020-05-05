@@ -22545,13 +22545,14 @@ MonoBehaviour:
   IgnoresDamage: 1
   LogDamageEvents: 1
   IsSpectator: 1
-  StartingHealth: 30
-  Health: 30
+  StartingHealth: 100
+  Health: 100
   testdamage: 1
   damage: 5
   speed: 1
   attacked: 0
   knockback: 5
+  dir: {x: 0, y: 0, z: 0}
   direction: 0
   pknockback: 5
   slider: {fileID: 6471194921237201426}
@@ -22567,7 +22568,7 @@ MonoBehaviour:
   fireball2: {fileID: 4652236414452285088, guid: 29f70e3da0ff23147a0f40d7810d10c1,
     type: 3}
   deathtime: 5
-  downtime: 4
+  downtime: 2
   Mouth: {fileID: 6471194921055072924}
   blitzpoint: {fileID: 6471194920311716844}
   location: {fileID: 6471194920904713900}
