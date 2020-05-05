@@ -62,4 +62,12 @@ public abstract class State
 
         yield break;
     }
+
+    public virtual IEnumerator TookDamage()
+    {
+        _pawn.invincible = true;
+        yield return new WaitForSeconds(2);
+        _pawn.invincible = false;
+        yield break;
+    }
 }
