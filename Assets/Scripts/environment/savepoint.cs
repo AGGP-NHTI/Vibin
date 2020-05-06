@@ -5,6 +5,7 @@ using UnityEngine;
 public class savepoint : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject Camera;
     public GameObject point;
     public SpriteRenderer renderer;
     public Sprite tagged;
@@ -15,6 +16,7 @@ public class savepoint : MonoBehaviour
         if (PlayerPrefs.GetInt("AtBoss") == 1)
         {
             Player.transform.position = point.transform.position;
+            Camera.transform.position = point.transform.position;
             renderer.sprite = tagged;
         }
     }

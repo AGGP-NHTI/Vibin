@@ -11,20 +11,42 @@ public class BossLocation : MonoBehaviour
     public bool isClose = false;
     Vector3 MoveDirection;
     public float WithinRange;
-
+    float hold;
     // Start is called before the first frame update
     void Start()
     {
-        currentTarget = boss.gameObject;
+        if (boss != null)
+        {
+            currentTarget = boss.gameObject;
+        }
+        
+
         transf = gameObject.GetComponent<Transform>();
+    }
+    void Awake()
+    {
+        if (boss == null)
+        {
+            gameObject.transform.SetParent(null);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveDirection = (currentTarget.transform.position - transf.position).normalized;
-        transf.position += (Time.deltaTime * MoveDirection * movespeed);
-        
+        if (boss != null)
+        {
+            MoveDirection = (currentTarget.transform.position - transf.position).normalized;
+            transf.position += (Time.deltaTime * MoveDirection * movespeed);
+        }
+        if (boss == null)
+        {
+            if (!IsCloseToTarget())
+            {
+                MoveDirection = (currentTarget.transform.position - transf.position).normalized;
+                transf.position += (Time.deltaTime * MoveDirection * movespeed);
+            }
+        }
     }
     public bool IsCloseToTarget()
     {
