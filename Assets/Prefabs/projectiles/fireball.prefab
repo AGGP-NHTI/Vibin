@@ -101,6 +101,8 @@ MonoBehaviour:
   LT: 5
   penetrate: 0
   destructable: 1
+  explosive: 1
+  boom: {fileID: 7671185496507506715, guid: 60ccb0292d28e144abdc88e9c476f2d8, type: 3}
 --- !u!95 &7039032815845246258
 Animator:
   serializedVersion: 3

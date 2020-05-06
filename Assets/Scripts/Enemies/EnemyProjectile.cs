@@ -9,7 +9,9 @@ public class EnemyProjectile : MonoBehaviour
     public float LT = 5f;
     public bool penetrate = false;
     public bool destructable = false;
-    
+    public bool explosive = false;
+    public GameObject boom;
+
     void FixedUpdate()
     {
         Move();
@@ -33,12 +35,26 @@ public class EnemyProjectile : MonoBehaviour
             playerPawn.Damage(gameObject.transform.right);
             if (!penetrate)
             {
+                if (explosive)
+                {
+                    GameObject clone;
+                    clone = Instantiate(boom, gameObject.transform.position, gameObject.transform.rotation);
+                }
                 Destroy(gameObject);
             }
         }
         if (PL != null || PR != null)
         {
-            Destroy(gameObject);
+            if (destructable)
+            {
+                Destroy(gameObject);
+                if (explosive)
+                {
+                    GameObject clone;
+                    clone = Instantiate(boom, gameObject.transform.position, gameObject.transform.rotation);
+                }
+            }
         }
     }
+    
 }
