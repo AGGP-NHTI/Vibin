@@ -7,6 +7,7 @@ public class endmusic : MonoBehaviour
     public float length = 7f;
     public AudioSource first;
     public AudioSource loop;
+    bool ff = true;
     
     void Start()
     {
@@ -17,11 +18,13 @@ public class endmusic : MonoBehaviour
     
     void FixedUpdate()
     {
-        length -= Time.fixedDeltaTime;
-        if (length <= 0)
+        if (first.isPlaying == false)
         {
-            first.gameObject.SetActive(false);
-            loop.UnPause();
+            if (ff)
+            {
+                ff = false;
+                loop.PlayDelayed(length);
+            }
         }
     }
 }

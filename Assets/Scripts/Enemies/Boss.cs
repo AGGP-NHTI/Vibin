@@ -29,6 +29,7 @@ public class Boss : BaseEnemy
     float currenttime;
     public GameObject Mouth;
     public GameObject blitzpoint;
+    public GameObject startpoint;
     
     public BossLocation location;
     public float range;
@@ -172,7 +173,7 @@ public class Boss : BaseEnemy
     {
         slider.value += 20f * Time.fixedDeltaTime;
 
-        location.currentTarget = IdleList[1];
+        location.currentTarget = startpoint;
 
         source.Pause();
 
