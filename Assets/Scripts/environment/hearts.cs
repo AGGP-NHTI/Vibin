@@ -9,6 +9,11 @@ public class hearts : MonoBehaviour
     public AudioSource audiosource;
     public AudioClip clip;
     bool ff = true;
+    public Vector3 norm;
+    void Start()
+    {
+        norm = gameObject.transform.localScale;
+    }
     void Update()
     {
         if (go)
@@ -21,7 +26,7 @@ public class hearts : MonoBehaviour
             }
             if (transform.localScale.x <= 0)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

@@ -11,6 +11,7 @@ public class savepoint : MonoBehaviour
     public Sprite tagged;
     public AudioSource source;
     public AudioClip tag;
+    public life bar;
     void Start()
     {
         if (PlayerPrefs.GetInt("AtBoss") == 1)
@@ -28,6 +29,7 @@ public class savepoint : MonoBehaviour
             if (PlayerPrefs.GetInt("AtBoss") == 0)
             {
                 source.PlayOneShot(tag, PlayerPrefs.GetFloat("Effects", 0.5f));
+                bar.Reset();
             }
             PlayerPrefs.SetInt("AtBoss", 1);
             renderer.sprite = tagged;

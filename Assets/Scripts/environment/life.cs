@@ -28,4 +28,16 @@ public class life : MonoBehaviour
             currentlife--;
         }
     }
+    public void Reset()
+    {
+        currentlife = 3;
+        healthindex = 0;
+        foreach (hearts i in health)
+        {
+            i.gameObject.SetActive(true);
+            i.transform.localScale = i.norm;
+            i.go = false;
+        }
+        player.health = 3;
+    }
 }

@@ -211,6 +211,7 @@ MonoBehaviour:
   rate: 2
   audiosource: {fileID: 1920906817}
   clip: {fileID: 8300000, guid: 82a8a0e9e1d1a6b4b86a21e10963cd89, type: 3}
+  norm: {x: 0, y: 0, z: 0}
 --- !u!1 &130992427
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,6 +3426,7 @@ MonoBehaviour:
   tagged: {fileID: 21300000, guid: 78b64a8137b87eb4681b90136434c82e, type: 3}
   source: {fileID: 1352506981}
   tag: {fileID: 8300000, guid: 605aabc2819b59a4691b994735921ed2, type: 3}
+  bar: {fileID: 873108732}
 --- !u!61 &1009248702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18242,6 +18244,7 @@ MonoBehaviour:
   rate: 2
   audiosource: {fileID: 1920906817}
   clip: {fileID: 8300000, guid: f14f7ee0855898b449ebd21abf1ab368, type: 3}
+  norm: {x: 0, y: 0, z: 0}
 --- !u!1 &1557153086
 GameObject:
   m_ObjectHideFlags: 0
@@ -18639,6 +18642,7 @@ MonoBehaviour:
   rate: 2
   audiosource: {fileID: 1920906817}
   clip: {fileID: 8300000, guid: e803fb87ac2276140bbe99bddd3ae0e4, type: 3}
+  norm: {x: 0, y: 0, z: 0}
 --- !u!1001 &1699655253
 PrefabInstance:
   m_ObjectHideFlags: 0
