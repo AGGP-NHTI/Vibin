@@ -2138,6 +2138,12 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 1353190165}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &647587700 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2082972382831497387, guid: d2e7a3ef833155c489d4d7990f8f98cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1353190165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &647587701 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
@@ -17754,6 +17760,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1920906815}
   - component: {fileID: 1920906816}
+  - component: {fileID: 1920906818}
   - component: {fileID: 1920906817}
   m_Layer: 0
   m_Name: camholder
@@ -17890,6 +17897,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1920906818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920906814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f907f6976538d7847b6f99d9c0eb6cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 647587701}
+  renderer: {fileID: 647587700}
+  invis: {r: 1, g: 1, b: 1, a: 0}
+  frequency: 0.05
 --- !u!1 &1972959205
 GameObject:
   m_ObjectHideFlags: 0
