@@ -15,7 +15,7 @@ public class cameratrack : MonoBehaviour
     }
 
     
-    void FixedUpdate()
+    void Update()
     {
         if (target.transform.position.x > gameObject.transform.position.x - distance)
         {
