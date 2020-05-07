@@ -6,7 +6,9 @@ public class BaseKnight : BaseStandardEnemy
 {
     public enemyhitbox sight;
     public enemyhitbox sword;
-    
+    public AudioSource source;
+    public AudioClip clip;
+    bool frame1 = true;
 
     public float attacktime = 0.2f;
     public float timeleft;
@@ -39,6 +41,11 @@ public class BaseKnight : BaseStandardEnemy
             timeleft -= Time.fixedDeltaTime;
             if (timeleft >= 0)
             {
+                if (frame1)
+                {
+                    source.PlayOneShot(clip, PlayerPrefs.GetFloat("Effects", 0.5f));
+                    frame1 = false;
+                }
                 sword.transform.gameObject.SetActive(true);
                 anim.SetBool("AttackingAnim", true);
             }
@@ -52,6 +59,7 @@ public class BaseKnight : BaseStandardEnemy
                 rb.constraints = RigidbodyConstraints2D.None;
                 
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                frame1 = true;
             }
         }
     }

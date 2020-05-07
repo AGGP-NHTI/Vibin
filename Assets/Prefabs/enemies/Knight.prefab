@@ -220,6 +220,8 @@ MonoBehaviour:
   anim: {fileID: 3320657945892706323}
   sight: {fileID: 5439928402564310391}
   sword: {fileID: 6841315564356386160}
+  source: {fileID: 1585541310342764152}
+  clip: {fileID: 8300000, guid: 251ea602d19181b4da4c2f483e27f7a0, type: 3}
   attacktime: 1
   timeleft: 0
   wait: 1
@@ -253,7 +255,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 251ea602d19181b4da4c2f483e27f7a0, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
