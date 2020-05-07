@@ -448,7 +448,7 @@ public class Boss : BaseEnemy
         deathtime -= Time.fixedDeltaTime;
         if (deathtime <= 0)
         {
-            slider.gameObject.SetActive(false);
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
