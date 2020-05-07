@@ -15,13 +15,17 @@ public class TutorialMessageScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
-        message.SetActive(true);
+        if (other.tag == "Player")
+        {
+            message.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "Player")
-        message.SetActive(false);
+        if (other.tag == "Player")
+        {
+            message.SetActive(false);
+        }
     }
 }
