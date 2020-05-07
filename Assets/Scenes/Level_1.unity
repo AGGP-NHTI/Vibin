@@ -1555,6 +1555,7 @@ GameObject:
   - component: {fileID: 377256658}
   - component: {fileID: 377256657}
   - component: {fileID: 377256656}
+  - component: {fileID: 377256659}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -1672,6 +1673,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377256654}
   m_CullTransparentMesh: 0
+--- !u!114 &377256659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377256654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af98a7f80f2d98468b7533d9867c819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 145921756}
+  previous: {fileID: 958687779}
+  finished: 0
+  rate: 0.085
+  delay: 0
+  dc: 0
+  xreached: 0
+  yreached: 0
+  endscale: {x: 0, y: 0, z: 0}
+  startscale: {x: 0, y: 0.5, z: 0}
+  localscale: {x: 0, y: 0, z: 0}
 --- !u!1 &455714510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,6 +1708,7 @@ GameObject:
   - component: {fileID: 455714512}
   - component: {fileID: 455714511}
   - component: {fileID: 455714514}
+  - component: {fileID: 455714515}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1759,6 +1784,23 @@ MonoBehaviour:
   bosssounds: {fileID: 6471194920419642008}
   player: {fileID: 647587699}
   isPaused: 0
+--- !u!114 &455714515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455714510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376a0913adc849c49be42f5eb6082961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 145921756}
+  children:
+  - {fileID: 1377918752}
+  - {fileID: 958687779}
+  - {fileID: 377256659}
 --- !u!1001 &515234593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2543,6 +2585,7 @@ GameObject:
   - component: {fileID: 958687778}
   - component: {fileID: 958687777}
   - component: {fileID: 958687776}
+  - component: {fileID: 958687779}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -2660,6 +2703,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958687774}
   m_CullTransparentMesh: 0
+--- !u!114 &958687779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958687774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af98a7f80f2d98468b7533d9867c819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 145921756}
+  previous: {fileID: 1377918752}
+  finished: 0
+  rate: 0.085
+  delay: 0
+  dc: 0
+  xreached: 0
+  yreached: 0
+  endscale: {x: 0, y: 0, z: 0}
+  startscale: {x: 0, y: 0.5, z: 0}
+  localscale: {x: 0, y: 0, z: 0}
 --- !u!1 &976661472
 GameObject:
   m_ObjectHideFlags: 0
@@ -16059,6 +16125,7 @@ GameObject:
   - component: {fileID: 1377918749}
   - component: {fileID: 1377918751}
   - component: {fileID: 1377918750}
+  - component: {fileID: 1377918752}
   m_Layer: 5
   m_Name: Game Paused
   m_TagString: Untagged
@@ -16203,6 +16270,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377918748}
   m_CullTransparentMesh: 0
+--- !u!114 &1377918752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377918748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af98a7f80f2d98468b7533d9867c819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 145921756}
+  previous: {fileID: 0}
+  finished: 0
+  rate: 0.085
+  delay: 0
+  dc: 0
+  xreached: 0
+  yreached: 0
+  endscale: {x: 0, y: 0, z: 0}
+  startscale: {x: 0, y: 0.5, z: 0}
+  localscale: {x: 0, y: 0, z: 0}
 --- !u!1001 &1418044125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24141,6 +24231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6471194921237201427}
   - component: {fileID: 6471194921237201426}
+  - component: {fileID: 6471194921237201438}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -24148,6 +24239,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &6471194921237201438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6471194921237201437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1af98a7f80f2d98468b7533d9867c819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 290301207}
+  previous: {fileID: 0}
+  finished: 0
+  rate: 0.5
+  delay: 0
+  dc: 0
+  xreached: 0
+  yreached: 0
+  endscale: {x: 0, y: 0, z: 0}
+  startscale: {x: 41, y: 0.5, z: 0}
+  localscale: {x: 0, y: 0, z: 0}
 --- !u!1 &6471194921258823570
 GameObject:
   m_ObjectHideFlags: 0
