@@ -14,6 +14,9 @@ public class PauseMenu : MonoBehaviour
     public AudioSource boss;
     public AudioSource bosssounds;
     public AudioSource player;
+    public GameObject controls;
+
+    bool turnoncontrols = false;
 
     public bool isPaused = false;
 
@@ -41,6 +44,15 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnPause()
     {
+        if (controls.activeInHierarchy == true)
+        {
+            controls.SetActive(false);
+            turnoncontrols = true;
+        }
+        else
+        {
+            turnoncontrols = false;
+        }
         player.mute = true;
         bosssounds.Pause();
         boss.Pause();
@@ -53,6 +65,11 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnUnpause()
     {
+        if (turnoncontrols)
+        {
+            controls.SetActive(true);
+            turnoncontrols = false;
+        }
         player.mute = false;
         boss.UnPause();
         lines.UnPause();
