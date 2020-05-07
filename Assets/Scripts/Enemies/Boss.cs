@@ -443,6 +443,7 @@ public class Boss : BaseEnemy
     }
     public void Die()
     {
+        spinning = false;
         gameObject.transform.rotation = Quaternion.identity;
         location.currentTarget = down;
         deathtime -= Time.fixedDeltaTime;
