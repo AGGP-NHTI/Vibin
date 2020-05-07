@@ -1830,6 +1830,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1585541310342764152, guid: f871f19ec5455dc4eafb12a3aa653915,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6154965977776791491, guid: f871f19ec5455dc4eafb12a3aa653915,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2680,7 +2685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &795209559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3936,6 +3941,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1585541310342764152, guid: f871f19ec5455dc4eafb12a3aa653915,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5439928401284680860, guid: f871f19ec5455dc4eafb12a3aa653915,
         type: 3}
       propertyPath: testdamage
@@ -16640,15 +16650,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2082972382831497380, guid: d2e7a3ef833155c489d4d7990f8f98cb,
+        type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 647587699}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.42
+      value: -8.66
       objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.14
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
@@ -16724,6 +16739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097002345048795842, guid: d2e7a3ef833155c489d4d7990f8f98cb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2e7a3ef833155c489d4d7990f8f98cb, type: 3}
