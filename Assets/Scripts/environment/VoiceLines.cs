@@ -29,7 +29,7 @@ public class VoiceLines : MonoBehaviour
         {
             OnTimeEnd();
 
-            int num = Random.Range(0, Lines.Capacity + 1);
+            int num = Random.Range(0, Lines.Capacity);
             source.PlayOneShot(Lines[num], PlayerPrefs.GetFloat("Voices"));
         }
     }

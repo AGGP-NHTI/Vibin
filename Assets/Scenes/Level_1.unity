@@ -1689,7 +1689,7 @@ MonoBehaviour:
   parent: {fileID: 145921756}
   previous: {fileID: 958687779}
   finished: 0
-  rate: 0.085
+  rate: 0.1
   delay: 0
   dc: 0
   xreached: 0
@@ -3158,7 +3158,7 @@ MonoBehaviour:
   parent: {fileID: 145921756}
   previous: {fileID: 1377918752}
   finished: 0
-  rate: 0.085
+  rate: 0.1
   delay: 0
   dc: 0
   xreached: 0
@@ -17034,7 +17034,7 @@ PrefabInstance:
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.82
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2082972382831497384, guid: d2e7a3ef833155c489d4d7990f8f98cb,
         type: 3}
@@ -17289,7 +17289,7 @@ MonoBehaviour:
   parent: {fileID: 145921756}
   previous: {fileID: 0}
   finished: 0
-  rate: 0.085
+  rate: 0.1
   delay: 0
   dc: 0
   xreached: 0
