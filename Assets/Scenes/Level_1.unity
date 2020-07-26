@@ -24377,8 +24377,9 @@ MonoBehaviour:
   projectile: {fileID: 5625216965190364086, guid: cbe63f7d4ce21fc4e982bf8bb52a5b8b,
     type: 3}
   spawnpoint: {fileID: 2513743716833145289}
-  frequency: 0.1
+  frequency: 0.05
   On: 0
+  rdm: 0.1
 --- !u!212 &1590602864778439996
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24478,8 +24479,9 @@ MonoBehaviour:
   projectile: {fileID: 5625216965190364086, guid: cbe63f7d4ce21fc4e982bf8bb52a5b8b,
     type: 3}
   spawnpoint: {fileID: 3648895144592722425}
-  frequency: 0.1
+  frequency: 0.05
   On: 0
+  rdm: 0.1
 --- !u!1 &2513743716833145289
 GameObject:
   m_ObjectHideFlags: 0
