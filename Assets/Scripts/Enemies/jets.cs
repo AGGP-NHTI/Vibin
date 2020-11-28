@@ -17,7 +17,7 @@ public class jets : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         if (On)
         {
